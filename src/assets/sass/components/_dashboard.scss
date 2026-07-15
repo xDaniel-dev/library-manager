@@ -1,0 +1,331 @@
+@use "../abstracts/_mixins.scss" as *;
+@use "../abstracts/_variables.scss" as *;
+
+
+.hidden {
+    display: none !important;
+}
+
+.dashboard-cards {
+    @include flex-start;
+    flex-wrap: wrap;
+    gap: $spacing-xl;
+    padding: $spacing-xl;
+
+    .card {
+        @include card;
+        width: 320px !important;
+        overflow: hidden;
+
+        @include hover-up;
+
+        .card-header {
+            @include flex-between;
+            background: $white;
+            padding: $spacing-lg;
+            border: none;
+            box-shadow: none;
+
+            img,
+            i {
+                width: 65px;
+                height: 65px;
+                object-fit: contain;
+                background: $card-icon-bg;
+                padding: $spacing-sm;
+                border-radius: $radius-lg;
+                font-size: 30px;
+            }
+
+            h5 {
+                font-size: $spacing-xl;
+                font-weight: 700;
+                color: $primary;
+                margin: 0;
+            }
+
+            p {
+                margin: .3rem 0 0;
+                color: $text-light;
+                font-size: .95rem;
+            }
+        }
+
+        .card-footer {
+            @include flex-between;
+            background: $white;
+            border-top: 1px solid $border-color;
+            padding: $spacing-sm $spacing-lg;
+
+            a {
+                text-decoration: none;
+                color: $primary;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            i {
+                font-size: $spacing-md;
+                color: $primary;
+                transition: $transition;
+            }
+        }
+
+        &:hover .card-footer i {
+            transform: translateX(6px);
+        }
+    }
+
+    .list-group {
+        width: 25rem;
+        border-bottom: 1px solid $border-light;
+        box-shadow: $shadow-sm;
+
+        .title {
+            font-size: 20px;
+        }
+
+        .card-li {
+            display: flex;
+            justify-content: space-between;
+            font-size: $radius-lg;
+
+            a {
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .bi {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+.dashboard-table {
+
+    display: flex;
+    gap: $spacing-xl;
+    align-items: flex-start;
+    padding: $spacing-xl;
+
+    .table-container {
+
+        flex: 3;
+        width: 75%;
+
+        .table {
+
+            background: $white;
+            border-radius: $radius-lg;
+            overflow: hidden;
+            box-shadow: $shadow-lg;
+            margin: 0;
+
+            caption {
+
+                caption-side: top;
+                text-align: left;
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: $text-dark;
+                padding: $spacing-md;
+                background: $white;
+
+            }
+
+            thead {
+
+                background: $primary;
+                color: $white;
+
+                th {
+
+                    border: none;
+                    padding: $spacing-sm;
+                    font-weight: 600;
+                    white-space: nowrap;
+
+                }
+
+            }
+
+            tbody {
+
+                tr {
+
+                    transition: $transition;
+
+                    &:hover {
+
+                        background: $background-hover;
+
+                    }
+
+                }
+
+                td,
+                th {
+
+                    vertical-align: middle;
+                    padding: $spacing-sm;
+
+                }
+
+                .book {
+
+
+                    display: flex;
+                    align-items: center;
+                    gap: $spacing-sm;
+
+                    .bi {
+
+                        @include icon-circle(48px,
+                            linear-gradient(135deg, $purple, $purple-light));
+
+                        font-size: 1.4rem;
+
+                    }
+
+                    div {
+
+                        display: flex;
+                        flex-direction: column;
+
+                    }
+
+                    p {
+
+                        margin: 0;
+
+                    }
+
+                    p:first-child {
+
+                        font-weight: 600;
+                        color: $text;
+
+                    }
+
+                    p:last-child {
+
+                        color: $text-light;
+                        font-size: .9rem;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .list-book {
+
+        flex: 1;
+        width: 25%;
+        margin: 0 2rem;
+
+        .list-group {
+
+            border: none;
+            border-radius: $radius-lg;
+            overflow: hidden;
+            box-shadow: $shadow-lg;
+
+            .title {
+
+                background: $primary;
+                color: $white;
+                font-size: 1.2rem;
+                font-weight: 600;
+                padding: $spacing-sm $spacing-md;
+                transition: none;
+                transform: none;
+
+                &:hover {
+
+                    background: $primary;
+                    transform: none;
+
+                }
+
+            }
+
+            .list-group-item {
+
+                padding: $spacing-sm $spacing-md;
+                border: none;
+                border-bottom: 1px solid $border-light;
+                transition: $transition;
+
+                &:not(.title):hover {
+
+                    background: $background-hover;
+                    transform: translateX(5px);
+
+                }
+
+                &:last-child {
+
+                    border: none;
+
+                }
+
+                .card-book {
+
+                    display: flex;
+                    align-items: center;
+                    gap: $spacing-sm;
+
+                    .bi {
+
+                        @include flex-center;
+
+                        width: 48px;
+                        height: 48px;
+                        border-radius: $radius-circle;
+                        font-size: 1.3rem;
+                        color: $white;
+                        background: linear-gradient(135deg,
+                                $purple,
+                                $purple-light );
+
+                    }
+
+                    div {
+
+                        p {
+
+                            margin: 0;
+
+                            &:first-child {
+
+                                font-weight: 600;
+                                color: $text;
+
+                            }
+
+                            &:last-child {
+
+                                color: $text-light;
+                                font-size: .9rem;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

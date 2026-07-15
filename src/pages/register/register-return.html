@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="icon" type="image/webp" id="icon-head">
+
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle menu-user" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Menu
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" id="home-menu">Home</a></li>
+                                <li><a class="dropdown-item" id="books-menu">Livros</a></li>
+                                <li><a class="dropdown-item" id="clients-menu">Clientes</a></li>
+                                <li><a class="dropdown-item admin-only" id="employees-menu">Funcionários</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" id="exit-menu">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mark">
+            <img id="icon-header" alt="icone-livro">
+            <h3>Biblioteca</h3>
+        </div>
+    </header>
+
+    <main>
+        <section class="register">
+            <form>
+
+                <h3 class="mb-4">Registrar Devolução</h3>
+
+                <div class="row">
+
+                    <!-- Código do empréstimo -->
+                    <div class="col-md-4 mb-3">
+                        <label for="codigo" class="form-label">Código do Empréstimo</label>
+                        <input type="number" class="form-control" id="codigo" placeholder="Ex.: 105">
+                    </div>
+
+                    <!-- Cliente -->
+                    <div class="col-md-8 mb-3">
+                        <label for="cliente" class="form-label">Cliente</label>
+                        <input type="text" class="form-control" id="cliente" value="João Silva" readonly>
+                    </div>
+
+                    <!-- Livro -->
+                    <div class="col-md-6 mb-3">
+                        <label for="livro" class="form-label">Livro</label>
+                        <input type="text" class="form-control" id="livro" value="Clean Code" readonly>
+                    </div>
+
+                    <!-- Funcionário -->
+                    <div class="col-md-6 mb-3">
+                        <label for="funcionario" class="form-label">Funcionário Responsável</label>
+                        <input type="text" class="form-control" id="funcionario" value="Funcionário Logado" readonly>
+                    </div>
+
+                    <!-- Empréstimo -->
+                    <div class="col-md-4 mb-3">
+                        <label for="dataEmprestimo" class="form-label">Data do Empréstimo</label>
+                        <input type="date" class="form-control" id="dataEmprestimo" readonly>
+                    </div>
+
+                    <!-- Prevista -->
+                    <div class="col-md-4 mb-3">
+                        <label for="dataPrevista" class="form-label">Data Prevista</label>
+                        <input type="date" class="form-control" id="dataPrevista" readonly>
+                    </div>
+
+                    <!-- Devolução -->
+                    <div class="col-md-4 mb-3">
+                        <label for="dataDevolucao" class="form-label">Data da Devolução</label>
+                        <input type="date" class="form-control" id="dataDevolucao">
+                    </div>
+
+                    <!-- Situação -->
+                    <div class="col-md-4 mb-3">
+                        <label for="situacao" class="form-label">Situação</label>
+                        <select class="form-select" id="situacao">
+                            <option selected>Devolvido</option>
+                            <option>Devolvido com atraso</option>
+                            <option>Livro danificado</option>
+                            <option>Livro perdido</option>
+                        </select>
+                    </div>
+
+                    <!-- Multa -->
+                    <div class="col-md-4 mb-3">
+                        <label for="multa" class="form-label">Multa (R$)</label>
+                        <input type="number" class="form-control" id="multa" value="0,00" step="0.01">
+                    </div>
+
+                    <!-- Status -->
+                    <div class="col-md-4 mb-3">
+                        <label for="status" class="form-label">Status</label>
+                        <input type="text" class="form-control" value="Finalizado" readonly>
+                    </div>
+
+                    <!-- Observações -->
+                    <div class="col-12 mb-3">
+                        <label for="observacao" class="form-label">Observações</label>
+                        <textarea class="form-control" id="observacao" rows="4"
+                            placeholder="Informe danos, atraso ou qualquer observação sobre a devolução."></textarea>
+                    </div>
+
+                </div>
+
+                <div class="d-flex justify-content-end gap-2 mt-4">
+
+                    <button type="reset" class="btn btn-secondary">
+                        Limpar
+                    </button>
+
+                    <button type="submit" class="btn btn-success">
+                        Registrar Devolução
+                    </button>
+
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

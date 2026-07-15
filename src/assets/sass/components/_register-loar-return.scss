@@ -1,0 +1,110 @@
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: #f4f6f9;
+
+    form {
+        width: 100%;
+        max-width: 70rem;
+        background: #fff;
+        padding: 2rem 2.5rem;
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 5px solid #198754;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: .4rem;
+        }
+
+        .form-control,
+        .form-select {
+
+            height: 48px;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+            transition: .25s;
+
+            &:focus {
+                border-color: #198754;
+                box-shadow: 0 0 0 .2rem rgba(25, 135, 84, .15);
+            }
+        }
+
+        textarea.form-control {
+            height: auto;
+            min-height: 120px;
+            resize: vertical;
+            padding-top: .8rem;
+        }
+
+        input[readonly] {
+            background: #f8f9fa;
+            font-weight: 600;
+            cursor: not-allowed;
+        }
+
+        .btn {
+            min-width: 170px;
+            height: 46px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: .3s;
+
+            &.btn-success {
+                background: #198754;
+                border: none;
+
+                &:hover {
+                    background: #157347;
+                }
+            }
+
+            &.btn-secondary {
+                background: #6c757d;
+                border: none;
+
+                &:hover {
+                    background: #5c636a;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .register {
+
+        padding: 1rem;
+
+        form {
+
+            padding: 1.5rem;
+
+            h3 {
+                font-size: 1.35rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .d-flex {
+                flex-direction: column;
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@use "./variables" as *;
+
+@mixin flex-center {
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+@mixin flex-between {
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+@mixin flex-start {
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+}
+
+@mixin flex-column {
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+@mixin card {
+
+    background:$white;
+    border:none;
+    border-radius:$radius-lg;
+    box-shadow:$shadow-md;
+
+}
+
+@mixin icon-circle($size,$background){
+
+    width:$size;
+    height:$size;
+
+    border-radius:$radius-circle;
+
+    @include flex-center;
+
+    color:$white;
+    background:$background;
+
+}
+
+@mixin hover-up{
+
+    transition:$transition;
+
+    &:hover{
+
+        transform:translateY(-8px);
+        box-shadow:$shadow-hover;
+
+    }
+
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="icon" type="image/webp" id="icon-head">
+
+</head>
+
+<body>
+   <header class="main-header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle menu-user" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Menu
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" id="home-menu">Home</a></li>
+                                <li><a class="dropdown-item" id="books-menu">Livros</a></li>
+                                <li><a class="dropdown-item" id="clients-menu">Clientes</a></li>
+                                <li><a class="dropdown-item admin-only" id="employees-menu">Funcionários</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" id="exit-menu">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mark">
+            <img id="icon-header" alt="icone-livro">
+            <h3>Biblioteca</h3>
+        </div>
+    </header>
+    <main>
+        <section class="register">
+            <form>
+
+                <h3 class="mb-4">Cadastro de Livro</h3>
+
+                <div class="row">
+
+                    <div class="col-md-8 mb-3">
+                        <label for="titulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="titulo" placeholder="Digite o título do livro">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="isbn" class="form-label">ISBN</label>
+                        <input type="text" class="form-control" id="isbn" placeholder="000-00-00000-00-0">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="autor" class="form-label">Autor</label>
+                        <input type="text" class="form-control" id="autor" placeholder="Nome do autor">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="editora" class="form-label">Editora</label>
+                        <input type="text" class="form-control" id="editora" placeholder="Nome da editora">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="categoria" class="form-label">Categoria</label>
+                        <select class="form-select" id="categoria">
+                            <option selected>Selecione</option>
+                            <option>Romance</option>
+                            <option>Fantasia</option>
+                            <option>Ficção Científica</option>
+                            <option>Suspense</option>
+                            <option>Terror</option>
+                            <option>Drama</option>
+                            <option>Biografia</option>
+                            <option>Tecnologia</option>
+                            <option>Educação</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="ano" class="form-label">Ano de Publicação</label>
+                        <input type="number" class="form-control" id="ano" placeholder="2026">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="idioma" class="form-label">Idioma</label>
+                        <select class="form-select" id="idioma">
+                            <option selected>Selecione</option>
+                            <option>Português</option>
+                            <option>Inglês</option>
+                            <option>Espanhol</option>
+                            <option>Francês</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="descricao" class="form-label">Sinopse</label>
+                        <textarea class="form-control" id="descricao" rows="4"
+                            placeholder="Digite uma breve sinopse do livro"></textarea>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="capa" class="form-label">Capa do Livro</label>
+                        <input class="form-control" type="file" id="capa" accept="image/*">
+                    </div>
+
+                </div>
+
+                <div class="d-flex justify-content-end gap-2 mt-4">
+                    <button type="reset" class="btn btn-secondary">
+                        Limpar
+                    </button>
+
+                    <button type="submit" class="btn btn-success">
+                        Cadastrar Livro
+                    </button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+</body>
+
+</html>

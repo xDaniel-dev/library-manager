@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Administrador",
+      "email": "admin@gmail.com",
+      "password": "adm",
+      "role": "manager",
+      "status": "ativo"
+    },
+    {
+      "id": 2,
+      "name": "Carlos",
+      "email": "funcionario@gmail.com",
+      "password": "123",
+      "role": "employee",
+      "status": "ativo"
+    }
+  ],
+
+  "clientes": [],
+
+  "livros": [],
+
+  "emprestimos": []
+}

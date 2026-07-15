@@ -1,0 +1,16 @@
+@use "./variables" as *;
+
+%card{
+
+    background:$white;
+    border-radius:$radius-lg;
+    box-shadow:$shadow-lg;
+
+}
+
+%title{
+
+    font-weight:700;
+    color:$text;
+
+}

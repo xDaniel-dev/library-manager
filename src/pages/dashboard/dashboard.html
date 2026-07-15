@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="icon" type="image/webp" id="icon-head">
+    
+</head>
+
+<body>
+ <header class="main-header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle menu-user" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Menu
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" id="home-menu">Home</a></li>
+                                <li><a class="dropdown-item" id="books-menu">Livros</a></li>
+                                <li><a class="dropdown-item" id="clients-menu">Clientes</a></li>
+                                <li><a class="dropdown-item admin-only" id="employees-menu">Funcionários</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" id="exit-menu">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mark">
+            <img id="icon-header" alt="icone-livro">
+            <h3>Biblioteca</h3>
+        </div>
+    </header>
+    <main>
+        <h2>Bem vindo !</h2>
+
+        <section class="dashboard-cards">
+            <div>
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body card-header">
+
+                        <img id="img-book" alt="icone-livro">
+
+                        <div>
+                            <h5 class="card-title">10</h5>
+                            <p class="card-text">Livros cadastrados</p>
+                        </div>
+                    </div>
+                    <div class="card-body card-footer ">
+                        <a id="books" class="card-link">Ver livros</a>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body card-header">
+
+                        <img id="img-client" alt="icone-livro">
+
+                        <div>
+                            <h5 class="card-title">10</h5>
+                            <p class="card-text">Clientes </p>
+                        </div>
+                    </div>
+                    <div class="card-body card-footer ">
+                        <a id="clients" class="card-link">Ver clientes</a>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-only">
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body card-header">
+
+                        <img id="img-employee" alt="icone-livro">
+
+                        <div>
+                            <h5 class="card-title">10</h5>
+                            <p class="card-text">Funcionários</p>
+                        </div>
+                    </div>
+                    <div class="card-body card-footer ">
+                        <a id="employees" class="card-link ">Ver funcionários</a>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 20rem;">
+                <div class="card-body card-header">
+
+                    <i class="bi bi-arrow-left-right "></i>
+
+                    <div>
+                        <h5 class="card-title">10</h5>
+                        <p class="card-text">Alugados</p>
+                    </div>
+                </div>
+                <div class="card-body card-footer ">
+                    <a id="book-rented" class="card-link">Ver livros alugados</a>
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item title">Atalhos rápidos</li>
+                <li class="list-group-item admin-only">
+                    <div class="card-li">
+                        <i class="bi bi-journals"></i>
+                        <a id="register-book" class="card-link ">Adicionar livro</a>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="card-li">
+                        <i class="bi bi-person-add text-success"></i>
+                        <a id="register-client" class="card-link">Novo cliente</a>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </li>
+                <li class="list-group-item admin-only">
+                    <div class="card-li">
+                        <i class="bi bi-person-add text-dark"></i>
+                        <a id="register-employee" class="card-link">Novo funcionário</a>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="card-li">
+                        <i class="bi bi-arrow-left-right text-primary"></i>
+                        <a id="register-loar" class="card-link">Registrar emprestimo</a>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="card-li">
+                        <i class="bi bi-box-arrow-in-right text-warning"></i>
+                        <a id="register-return" class="card-link">Devolver Livro</a>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="dashboard-table">
+            <div class="table-container ">
+                <table class="table table-hover">
+                    <caption class="fs-4 fw-bold text-dark">Últimos Empréstimos</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Livro</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Data emprestimo</th>
+                            <th scope="col">Data devolução</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>
+                                <div class="book">
+                                    <i class="bi bi-journals"></i>
+                                    <div>
+                                        <p>Titulo do livro</p>
+                                        <p>Autor</p>
+                                    </div>
+                            </td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>
+                                <div class="book">
+                                    <i class="bi bi-journals"></i>
+                                    <div>
+                                        <p>Titulo do livro</p>
+                                        <p>Autor</p>
+                                    </div>
+                            </td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>
+                                <div class="book">
+                                    <i class="bi bi-journals"></i>
+                                    <div>
+                                        <p>Titulo do livro</p>
+                                        <p>Autor</p>
+                                    </div>
+                            </td>
+                            <td>Doe</td>
+                            <td>@social</td>
+                            <td>@social</td>
+                            <td>@social</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>
+                                <div class="book">
+                                    <i class="bi bi-journals"></i>
+                                    <div>
+                                        <p>Titulo do livro</p>
+                                        <p>Autor</p>
+                                    </div>
+                            </td>
+                            <td>Doe</td>
+                            <td>@social</td>
+                            <td>@social</td>
+                            <td>@social</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>
+                                <div class="book">
+                                    <i class="bi bi-journals"></i>
+                                    <div>
+                                        <p>Titulo do livro</p>
+                                        <p>Autor</p>
+                                    </div>
+                            </td>
+                            <td>Doe</td>
+                            <td>@social</td>
+                            <td>@social</td>
+                            <td>@social</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="list-book">
+                <ul class="list-group ">
+                    <li class="list-group-item title">Livros mais emprestados</li>
+                    <li class="list-group-item">
+                        <div class="card-book">
+                            <i class="bi bi-journals"></i>
+                            <div>
+                                <p class="card-link">Titulo do livro</p>
+                                <p class="card-link">Autor</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="card-book">
+                            <i class="bi bi-journals"></i>
+                            <div>
+                                <p class="card-link">Titulo do livro</p>
+                                <p class="card-link">Autor</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="card-book">
+                            <i class="bi bi-journals"></i>
+                            <div>
+                                <p class="card-link">Titulo do livro</p>
+                                <p class="card-link">Autor</p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </section>
+
+
+    </main>
+
+  
+</body>
+
+</html>

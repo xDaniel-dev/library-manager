@@ -1,0 +1,18 @@
+@use "bootstrap/scss/bootstrap" ;
+
+@use "./abstracts/_variables.scss";
+@use "./abstracts/_functions.scss";
+@use "./abstracts/_mixins.scss";
+@use "./abstracts/_placeholders.scss";
+
+
+@use "./base/_global" ;
+
+@use "./components/_login" ;
+@use "./components/_header" ;
+@use "./components/_dashboard" ;
+@use "./components/_register-book" ;
+@use "./components/_register-client" ;
+@use "./components/_register-employee" ;
+@use "./components/_register-loar-return" ;
+
