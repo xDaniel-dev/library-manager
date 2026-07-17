@@ -1,22 +1,29 @@
 import "bootstrap"
-
 import "../../assets/sass/index.scss"
-
 import icone from "../../assets/img/icone.webp"
-
 import { login } from "../../services/authService"
-
-import { redirectByRole, saveUser, setElementAttribute } from "../../utils/session"
+import { saveUser,  } from "../../utils/session"
+import { redirectByRole,setElementAttribute,byId } from "../../utils/dom"
+import { getUser } from "../../utils/session"
 
 setElementAttribute("icon-head","href",icone)
 setElementAttribute("icon-body","src",icone)
 
-const form = document.getElementById("loginForm") as HTMLFormElement
+window.addEventListener("pageshow", () => {
+    const user = getUser();
+
+    if (user) {
+        window.location.replace("/dashboard.html"); 
+    }
+});
+
+
+const form = byId<HTMLFormElement>("loginForm")
 form.addEventListener("submit",async (e)=>{
     e.preventDefault()
 
-    const email = document.getElementById("email") as HTMLInputElement
-    const password = document.getElementById("password") as HTMLInputElement
+    const email = byId<HTMLInputElement>("email")
+    const password = byId<HTMLInputElement>("password")
 
     try {
         const user = await login(email.value,password.value)
@@ -28,6 +35,7 @@ form.addEventListener("submit",async (e)=>{
 
         saveUser(user)
         redirectByRole(user)
+        form.reset()
 
     } catch (error) {
         console.log(error)

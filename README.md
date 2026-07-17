@@ -2,7 +2,7 @@
 
 Sistema de gerenciamento de biblioteca desenvolvido para estudo e portfólio.
 
-O projeto permite controlar livros, clientes, funcionários e empréstimos através de uma interface administrativa com níveis de acesso.
+O projeto permite controlar livros, clientes, funcionários e empréstimos através de uma interface administrativa com autenticação e níveis de acesso.
 
 ---
 
@@ -12,15 +12,22 @@ O projeto permite controlar livros, clientes, funcionários e empréstimos atrav
 
 - Login de usuários
 - Controle de sessão
-- Controle de acesso por perfil
+- Proteção de páginas autenticadas
+- Redirecionamento automático após logout
+- Controle de acesso baseado em perfil (RBAC)
+
+### 📊 Dashboard
+
+- Interface centralizada para gerenciamento da biblioteca
+- Exibição de informações conforme o nível de acesso do usuário
 
 ### 👨‍💼 Administrador (Manager)
 
-- Dashboard administrativo
+- Gerenciamento de livros
 - Cadastro e remoção de livros
-- Cadastro e gerenciamento de funcionários
+- Gerenciamento de funcionários
 - Visualização de clientes
-- Controle de empréstimos
+- Controle de empréstimos e devoluções
 
 ### 👨‍💻 Funcionário (Employee)
 
@@ -58,7 +65,6 @@ cd biblioteca
 Instale as dependências:
 
 npm install
-
 ▶️ Executando o projeto
 
 Inicie o servidor da API:
@@ -72,19 +78,22 @@ npm run dev
 O projeto estará disponível em:
 
 http://localhost:3000
-
 🔑 Usuários de teste
+👨‍💼 Administrador
 
-👨‍💼 Manager
 Email:
+
 admin@email.com
 
 Senha:
-adm
 
-👨‍💻 Employee
+adm
+👨‍💻 Funcionário
+
 Email:
+
 funcionario@email.com
 
 Senha:
+
 123

@@ -19,37 +19,19 @@ export function getUser(): IUser | null{
     return JSON.parse(user)
 }
 
-export function logout(): void {
-    sessionStorage.removeItem(session_key)
+export function logout(id: string, path: string): void {
+    const button = document.getElementById(id);
+
+    if (!button) return;
+
+    button.addEventListener("click", () => {
+        sessionStorage.removeItem(session_key);
+
+        history.pushState(null, "", location.href);
+        
+        // Impede voltar para páginas protegidas
+        window.location.replace(path);
+    });
 }
 
-export function redirectByRole(user:IUser):void{
 
-    if(user.role === "manager" || user.role === "employee"){
-        window.location.href = "/dashboard.html"
-        return
-    }
-    
-    window.location.href = "/login.html"
-    
-}
-
-export function redirect(id:string, page:string): void {
-    const element = document.getElementById(id)
-
-    if(!element) return
-
-    element.addEventListener("click",()=>{
-        window.location.href = page
-    })
-
-}
-
-export function setElementAttribute(id:string, atribute:string, img:string): void{
-    const element = document.getElementById(id)
-    
-    if(!element) return
-
-    element.setAttribute(atribute,img)
-
-}

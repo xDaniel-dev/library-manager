@@ -2,7 +2,9 @@ import "bootstrap"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "../../assets/sass/index.scss"
 import icone from "../../assets/img/icone.webp"
-import { setElementAttribute,getUser,redirect } from "../../utils/session"
+import { checkAuth } from "../../utils/authGuard";
+import { redirect,setElementAttribute } from "../../utils/dom";
+import { logout } from "../../utils/session";
 
 setElementAttribute("icon-head","href",icone)
 setElementAttribute("icon-header","src",icone)
@@ -13,16 +15,8 @@ redirect("clients-menu","/clients.html")
 redirect("employees-menu","/employees.html")
 redirect("exit-menu","/login.html")
 
-const user = getUser();
+logout("exit-menu","/login.html")
 
-if (!user) {
-    window.location.href = "/login.html";
-}
-
-const adminElements = document.querySelectorAll(".admin-only");
-
-if (user?.role === "employee") {
-    adminElements.forEach(element => {
-        element.classList.add("hidden");
-    });
-}
+window.addEventListener("pageshow", () => {
+    checkAuth();
+});

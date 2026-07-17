@@ -17,10 +17,230 @@
       "status": "ativo"
     }
   ],
-
   "clientes": [],
-
-  "livros": [],
-
+  "Books": [
+    [
+      {
+        "title": "Dom Casmurro",
+        "isbn": 9788535914849,
+        "author": "Machado de Assis",
+        "publisher": "Companhia das Letras",
+        "category": "Romance",
+        "year": 1899,
+        "language": "Português",
+        "description": "Bentinho relembra sua juventude e revive a dúvida sobre a fidelidade de Capitu.",
+        "id": 1
+      },
+      {
+        "title": "Orgulho e Preconceito",
+        "isbn": 9788544001820,
+        "author": "Jane Austen",
+        "publisher": "Martin Claret",
+        "category": "Romance",
+        "year": 1813,
+        "language": "Português",
+        "description": "Elizabeth Bennet enfrenta preconceitos e descobre o verdadeiro amor.",
+        "id": 2
+      },
+      {
+        "title": "Harry Potter e a Pedra Filosofal",
+        "isbn": 9788532511010,
+        "author": "J. K. Rowling",
+        "publisher": "Rocco",
+        "category": "Fantasia",
+        "year": 1997,
+        "language": "Português",
+        "description": "Um garoto descobre que é um bruxo e ingressa na Escola de Magia de Hogwarts.",
+        "id": 3
+      },
+      {
+        "title": "O Hobbit",
+        "isbn": 9788595084759,
+        "author": "J. R. R. Tolkien",
+        "publisher": "HarperCollins",
+        "category": "Fantasia",
+        "year": 1937,
+        "language": "Português",
+        "description": "Bilbo Bolseiro embarca em uma aventura para recuperar um tesouro guardado por um dragão.",
+        "id": 4
+      },
+      {
+        "title": "O Nome do Vento",
+        "isbn": 9788599296493,
+        "author": "Patrick Rothfuss",
+        "publisher": "Arqueiro",
+        "category": "Fantasia",
+        "year": 2007,
+        "language": "Português",
+        "description": "Kvothe narra sua trajetória de órfão a um dos maiores magos de seu mundo.",
+        "id": 5
+      },
+      {
+        "title": "1984",
+        "isbn": 9788535914848,
+        "author": "George Orwell",
+        "publisher": "Companhia das Letras",
+        "category": "Ficção Científica",
+        "year": 1949,
+        "language": "Português",
+        "description": "Um homem luta contra um regime que controla todos os aspectos da vida.",
+        "id": 6
+      },
+      {
+        "title": "Duna",
+        "isbn": 9788576573133,
+        "author": "Frank Herbert",
+        "publisher": "Aleph",
+        "category": "Ficção Científica",
+        "year": 1965,
+        "language": "Português",
+        "description": "Paul Atreides enfrenta disputas políticas e religiosas no planeta Arrakis.",
+        "id": 7
+      },
+      {
+        "title": "Fundação",
+        "isbn": 9788576572006,
+        "author": "Isaac Asimov",
+        "publisher": "Aleph",
+        "category": "Ficção Científica",
+        "year": 1951,
+        "language": "Português",
+        "description": "Um cientista tenta preservar o conhecimento para salvar a civilização.",
+        "id": 8
+      },
+      {
+        "title": "O Código Da Vinci",
+        "isbn": 9788575421138,
+        "author": "Dan Brown",
+        "publisher": "Arqueiro",
+        "category": "Suspense",
+        "year": 2003,
+        "language": "Português",
+        "description": "Um professor desvenda mistérios ligados à história do Santo Graal.",
+        "id": 9
+      },
+      {
+        "title": "A Garota no Trem",
+        "isbn": 9788501108174,
+        "author": "Paula Hawkins",
+        "publisher": "Record",
+        "category": "Suspense",
+        "year": 2015,
+        "language": "Português",
+        "description": "Uma passageira presencia um acontecimento misterioso durante suas viagens.",
+        "id": 10
+      },
+      {
+        "title": "O Iluminado",
+        "isbn": 9788556510365,
+        "author": "Stephen King",
+        "publisher": "Suma",
+        "category": "Terror",
+        "year": 1977,
+        "language": "Português",
+        "description": "Uma família se isola em um hotel onde forças sobrenaturais despertam a loucura.",
+        "id": 11
+      },
+      {
+        "title": "Drácula",
+        "isbn": 9788577990618,
+        "author": "Bram Stoker",
+        "publisher": "Zahar",
+        "category": "Terror",
+        "year": 1897,
+        "language": "Português",
+        "description": "O lendário Conde Drácula espalha terror em sua busca por novas vítimas.",
+        "id": 12
+      },
+      {
+        "title": "A Menina que Roubava Livros",
+        "isbn": 9788598078175,
+        "author": "Markus Zusak",
+        "publisher": "Intrínseca",
+        "category": "Drama",
+        "year": 2005,
+        "language": "Português",
+        "description": "Durante a Segunda Guerra Mundial, uma garota encontra conforto nos livros.",
+        "id": 13
+      },
+      {
+        "title": "Extraordinário",
+        "isbn": 9788580573015,
+        "author": "R. J. Palacio",
+        "publisher": "Intrínseca",
+        "category": "Drama",
+        "year": 2012,
+        "language": "Português",
+        "description": "Um menino com uma condição facial rara enfrenta os desafios da escola.",
+        "id": 14
+      },
+      {
+        "title": "Steve Jobs",
+        "isbn": 9788535922011,
+        "author": "Walter Isaacson",
+        "publisher": "Companhia das Letras",
+        "category": "Biografia",
+        "year": 2011,
+        "language": "Português",
+        "description": "A trajetória de um dos maiores inovadores da história da tecnologia.",
+        "id": 15
+      },
+      {
+        "title": "Elon Musk",
+        "isbn": 9786555646535,
+        "author": "Walter Isaacson",
+        "publisher": "Intrínseca",
+        "category": "Biografia",
+        "year": 2023,
+        "language": "Português",
+        "description": "Biografia do empresário responsável pela Tesla, SpaceX e outras empresas.",
+        "id": 16
+      },
+      {
+        "title": "Clean Code",
+        "isbn": 9780132350884,
+        "author": "Robert C. Martin",
+        "publisher": "Prentice Hall",
+        "category": "Tecnologia",
+        "year": 2008,
+        "language": "Português",
+        "description": "Boas práticas para escrever código limpo, organizado e sustentável.",
+        "id": 17
+      },
+      {
+        "title": "JavaScript: O Guia Definitivo",
+        "isbn": 9788575227303,
+        "author": "David Flanagan",
+        "publisher": "Bookman",
+        "category": "Tecnologia",
+        "year": 2021,
+        "language": "Português",
+        "description": "Um guia completo sobre JavaScript moderno para desenvolvedores.",
+        "id": 18
+      },
+      {
+        "title": "Pedagogia da Autonomia",
+        "isbn": 9788577531637,
+        "author": "Paulo Freire",
+        "publisher": "Paz e Terra",
+        "category": "Educação",
+        "year": 1996,
+        "language": "Português",
+        "description": "Reflexões sobre a prática docente e a construção do conhecimento.",
+        "id": 19
+      },
+      {
+        "title": "O Poder do Hábito",
+        "isbn": 9788539004119,
+        "author": "Charles Duhigg",
+        "publisher": "Objetiva",
+        "category": "Outros",
+        "year": 2012,
+        "language": "Português",
+        "description": "Explica como os hábitos são formados e como podem ser transformados.",
+        "id": 20
+      }
+    ]
+  ],
   "emprestimos": []
 }
