@@ -1,38 +1,75 @@
 import { IUser } from "../interfaces/user"
 
 
-export function redirectByRole(user:IUser):void{
+/**
+ * Redireciona o usuário para a página correta conforme seu nível de acesso.
+ * 
+ * Atualmente todos os perfis utilizam o mesmo dashboard,
+ * porém a validação do role mantém a estrutura preparada
+ * para futuras páginas ou permissões diferentes.
+ */
+export function redirectByRole(user: IUser): void {
 
-    if(user.role === "manager" || user.role === "employee"){
-        window.location.href = "/dashboard.html"
-        return
+    if (user.role === "manager" || user.role === "employee") {
+        window.location.href = "/dashboard.html";
+        return;
     }
-    
-    window.location.href = "/login.html"
-    
-}
 
-export function redirect(id:string, page:string): void {
-    const element = document.getElementById(id)
-
-    if(!element) return
-
-    element.addEventListener("click",()=>{
-        window.location.href = page
-    })
+    window.location.href = "/login.html";
 
 }
 
-export function setElementAttribute(id:string, atribute:string, img:string): void{
-    const element = document.getElementById(id)
-    
-    if(!element) return
 
-    element.setAttribute(atribute,img)
+/**
+ * Adiciona um redirecionamento de página a um elemento HTML.
+ * 
+ * Utilizado para controlar navegação através de botões,
+ * cards ou links da interface.
+ */
+export function redirect(id: string, page: string): void {
+
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    element.addEventListener("click", () => {
+        window.location.href = page;
+    });
 
 }
 
+
+/**
+ * Altera um atributo de um elemento HTML.
+ * 
+ * Utilizada principalmente para manipulação dinâmica
+ * de atributos como imagens, textos ou propriedades
+ * de elementos da página.
+ */
+export function setElementAttribute(
+    id: string,
+    atribute: string,
+    img: string
+): void {
+
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    element.setAttribute(atribute, img);
+
+}
+
+
+/**
+ * Busca um elemento HTML pelo ID garantindo sua tipagem.
+ * 
+ * Diferente do getElementById padrão, essa função lança
+ * um erro caso o elemento não exista, evitando trabalhar
+ * com valores nulos durante a execução.
+ */
 export function byId<T extends HTMLElement>(id: string): T {
+
     const element = document.getElementById(id);
 
     if (!element) {
@@ -40,4 +77,5 @@ export function byId<T extends HTMLElement>(id: string): T {
     }
 
     return element as T;
+
 }
