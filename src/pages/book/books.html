@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<header class="main-header">
+    <header class="main-header">
         <nav class="navbar navbar-expand-lg bg-body-tertiary ">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -22,8 +22,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle menu-user" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle menu-user" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Menu
                             </a>
                             <ul class="dropdown-menu">
@@ -46,6 +46,36 @@
             <h3>Biblioteca</h3>
         </div>
     </header>
+    <div class="books-page container-fluid">
 
+        <div class="books-header">
+            <h2>Livros Cadastrados</h2>
 
+            <div class="books-filters">
+
+                <div class="search">
+                    <input type="text" id="search-book" class="form-control" placeholder="Pesquisar livro...">
+                </div>
+
+                <div class="category">
+                    <select class="form-select" id="category">
+                        <option selected>Todos</option>
+                        <option>Romance</option>
+                        <option>Fantasia</option>
+                        <option>Ficção Científica</option>
+                        <option>Suspense</option>
+                        <option>Terror</option>
+                        <option>Drama</option>
+                        <option>Biografia</option>
+                        <option>Tecnologia</option>
+                        <option>Educação</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+
+        <ul class="books-list" id="ul"></ul>
+    </div>
 </html>

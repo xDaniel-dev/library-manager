@@ -19,7 +19,6 @@
   ],
   "clientes": [],
   "Books": [
-    [
       {
         "title": "Dom Casmurro",
         "isbn": 9788535914849,
@@ -240,7 +239,6 @@
         "description": "Explica como os hábitos são formados e como podem ser transformados.",
         "id": 20
       }
-    ]
   ],
   "emprestimos": []
 }

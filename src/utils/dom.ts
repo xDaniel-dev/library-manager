@@ -1,4 +1,4 @@
-import { IUser } from "../interfaces/user"
+import { IBook, IUser } from "../interfaces/user"
 
 
 /**
@@ -79,3 +79,4 @@ export function byId<T extends HTMLElement>(id: string): T {
     return element as T;
 
 }
+

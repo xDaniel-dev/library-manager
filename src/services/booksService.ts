@@ -54,3 +54,18 @@ async function getBookByIsbn(isbn: number): Promise<IBook | null> {
 
     return books.length > 0 ? books[0] : null;
 }
+
+export async function getBooks(): Promise<IBook[]> {
+    try {
+        const response = await fetch(`${api_url}/Books`);
+
+        if (!response.ok) {
+            throw new Error("Erro ao buscar os livros.");
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+}

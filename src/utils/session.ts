@@ -1,6 +1,7 @@
 import { IUser } from "../interfaces/user";
 
 
+
 /**
  * Chave utilizada para armazenar os dados do usuário
  * autenticado dentro do sessionStorage.
@@ -73,3 +74,4 @@ export function logout(id: string, path: string): void {
     });
 
 }
+
