@@ -1,11 +1,13 @@
 import "bootstrap"
 import "../../assets/sass/index.scss"
 import icone from "../../assets/img/icone.webp"
+import books from "../../assets/img/books.png"
 import { login } from "../../services/authService"
 import { saveUser,  } from "../../utils/session"
 import { redirectByRole,setElementAttribute,byId } from "../../utils/dom"
 import { getUser } from "../../utils/session"
 
+setElementAttribute("books","src",books)
 setElementAttribute("icon-head","href",icone)
 setElementAttribute("icon-body","src",icone)
 

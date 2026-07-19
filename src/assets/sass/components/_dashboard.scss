@@ -103,14 +103,12 @@
 }
 
 .dashboard-table {
-
     display: flex;
     gap: $spacing-xl;
     align-items: flex-start;
     padding: $spacing-xl;
 
     .table-container {
-
         flex: 3;
         width: 75%;
 
@@ -327,5 +325,4 @@
         }
 
     }
-
 }

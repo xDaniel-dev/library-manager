@@ -1,6 +1,3 @@
-console.log("Dashboard carregou");
-console.log(sessionStorage.getItem("libraryUser"));
-
 import "bootstrap"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "../../assets/sass/index.scss"
@@ -23,7 +20,13 @@ redirect("books-menu","/books.html")
 redirect("clients-menu","/clients.html")
 redirect("employees-menu","/employees.html")
 
+redirect("home-menu-mobile","/dashboard.html")
+redirect("books-menu-mobile","/books.html")
+redirect("clients-menu-mobile","/clients.html")
+redirect("employees-menu-mobile","/employees.html")
+
 logout("exit-menu","/login.html")
+logout("exit-menu-mobile","/login.html")
 
 redirect("books","/books.html")
 redirect("clients","/clients.html")
@@ -36,7 +39,8 @@ redirect("register-employee","/register-employee.html")
 redirect("register-loar","/register-loar.html")
 redirect("register-return","/register-return.html")
 
+checkAuth();
 
-    checkAuth();
+
 
 
