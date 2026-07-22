@@ -94,35 +94,28 @@
 
     <main>
         <section class="register">
-            <form>
-
+            <form id="form">
                 <h3 class="mb-4">Cadastro de Funcionário</h3>
-
                 <div class="row">
-
                     <div class="col-md-6 mb-3">
-                        <label for="nome" class="form-label">Nome completo</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome completo">
+                        <label for="name" class="form-label">Nome completo</label>
+                        <input type="text" class="form-control" id="name" placeholder="Digite o nome completo">
                     </div>
-
                     <div class="col-md-6 mb-3">
                         <label for="cpf" class="form-label">CPF</label>
                         <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
                     </div>
-
                     <div class="col-md-6 mb-3">
                         <label for="email" class="form-label">E-mail</label>
                         <input type="email" class="form-control" id="email" placeholder="email@biblioteca.com">
                     </div>
-
                     <div class="col-md-6 mb-3">
-                        <label for="telefone" class="form-label">Telefone</label>
-                        <input type="tel" class="form-control" id="telefone" placeholder="(00) 00000-0000">
+                        <label for="telephone" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="telephone" placeholder="(00) 00000-0000">
                     </div>
-
                     <div class="col-md-4 mb-3">
-                        <label for="cargo" class="form-label">Cargo</label>
-                        <select class="form-select" id="cargo">
+                        <label for="role" class="form-label">Cargo</label>
+                        <select class="form-select" id="role">
                             <option selected>Selecione</option>
                             <option>Funcionário</option>
                             <option>Gerente</option>
@@ -130,31 +123,18 @@
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="admissao" class="form-label">Data de admissão</label>
-                        <input type="date" class="form-control" id="admissao">
-                    </div>
-
-                    <div class="col-md-4 mb-3">
-                        <label for="status" class="form-label">Status</label>
-                        <select class="form-select" id="status">
-                            <option selected>Ativo</option>
-                            <option>Inativo</option>
-                        </select>
+                        <label for="date" class="form-label">Data de admissão</label>
+                        <input type="date" class="form-control" id="date">
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="usuario" class="form-label">Usuário</label>
-                        <input type="text" class="form-control" id="usuario" placeholder="Nome de usuário">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="password" placeholder="Digite uma senha">
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="senha" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="senha" placeholder="Digite uma senha">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label for="confirmarSenha" class="form-label">Confirmar senha</label>
-                        <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme a senha">
+                        <label for="confirmPassword" class="form-label">Confirmar senha</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme a senha">
                     </div>
 
                 </div>

@@ -1,11 +1,11 @@
 import { IUser } from "../interfaces/user";
 
 
-
 /**
- * Chave utilizada para armazenar os dados do usuário
- * autenticado dentro do sessionStorage.
+ * Chave utilizada para identificar a sessão do usuário
+ * armazenada no sessionStorage.
  */
+
 const session_key = "libraryUser";
 
 

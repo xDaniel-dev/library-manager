@@ -1,4 +1,4 @@
-import { IBook, IUser } from "../interfaces/user"
+import { IUser } from "../interfaces/user"
 
 
 /**
@@ -10,7 +10,7 @@ import { IBook, IUser } from "../interfaces/user"
  */
 export function redirectByRole(user: IUser): void {
 
-    if (user.role === "manager" || user.role === "employee") {
+    if (user.role === "Gerente" || user.role === "Funcionário") {
         window.location.href = "/dashboard.html";
         return;
     }

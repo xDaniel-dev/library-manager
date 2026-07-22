@@ -1,34 +1,24 @@
 import { getUser } from "./session";
 
-
 /**
- * Verifica se existe um usuário autenticado no sistema.
- * 
- * Também controla a exibição de funcionalidades conforme
- * o nível de acesso do usuário.
+ * Verifica se existe uma sessão de usuário ativa.
+ *
+ * Caso não haja um usuário autenticado, o acesso é
+ * redirecionado para a página de login. Também controla
+ * a visibilidade de funcionalidades administrativas de
+ * acordo com o perfil do usuário.
  */
+
 export function checkAuth() {
 
     const user = getUser();
 
-
-    /**
-     * Caso não exista uma sessão ativa, o usuário é redirecionado
-     * para a página de login.
-     */
     if (!user) {
         window.location.href = "/login.html";
         return;
     }
 
-
-    /**
-     * Usuários com perfil employee não possuem acesso às
-     * funcionalidades administrativas.
-     * 
-     * Elementos marcados com a classe "admin-only" são ocultados.
-     */
-    if (user.role === "employee") {
+    if (user.role === "Funcionário") {
 
         const adminElements = document.querySelectorAll(".admin-only");
 
@@ -40,14 +30,16 @@ export function checkAuth() {
 }
 
 
+
 /**
- * Executa a validação de autenticação sempre que a página
- * é carregada ou restaurada pelo histórico do navegador.
- * 
- * O evento "pageshow" também detecta o uso dos botões
- * voltar/avançar, evitando que páginas protegidas sejam
- * acessadas sem uma sessão válida.
+ * Executa a verificação de autenticação sempre que a página
+ * é exibida.
+ *
+ * Também trata páginas restauradas pelo cache do navegador
+ * (Back/Forward Cache), forçando o recarregamento para
+ * impedir o acesso a páginas protegidas após o logout.
  */
+
 window.addEventListener("pageshow", (event) => {
 
     if (event.persisted) {

@@ -1,6 +1,4 @@
-import "bootstrap"
-import "bootstrap-icons/font/bootstrap-icons.css"
-import "../../assets/sass/index.scss"
+import "../../utils/common";
 
 import icone from "../../assets/img/icone.webp"
 import client from "../../assets/img/cliente-icone.png"

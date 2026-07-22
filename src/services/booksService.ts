@@ -1,59 +1,40 @@
 import { IBook } from "../interfaces/user";
+import { getByField, POST } from "../utils/generic";
 import api_url from "./api";
-
 
 /**
  * Cadastra um novo livro na biblioteca.
- * 
- * Antes de realizar o cadastro, verifica se já existe
- * um livro com o mesmo ISBN para evitar duplicidade.
+ *
+ * Antes de realizar o cadastro, verifica se já existe um
+ * livro com o mesmo ISBN para evitar registros duplicados.
+ *
+ * @param book Dados do livro a ser cadastrado.
+ * @returns O livro cadastrado.
+ * @throws Error Caso já exista um livro com o mesmo ISBN
+ * ou ocorra um erro durante o cadastro.
  */
+
 export async function createBook(book: IBook) {
 
-    const exists = await getBookByIsbn(book.isbn);
+    const exists = await getByField("Books","isbn",book.isbn,"Erro ao buscar livro.")
 
     if (exists) {
         throw new Error("Livro já cadastrado.");
     }
 
-
-    const response = await fetch(`${api_url}/Books`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(book)
-    })
-
-
-    if (!response.ok) {
-        throw new Error("Erro ao cadastrar livro");
-    }
-
-
-    return await response.json();
+   return POST("Books",book,"Erro ao cadastrar livro")
 }
 
 
 /**
- * Busca um livro pelo ISBN informado.
- * 
- * Utilizada antes do cadastro para validar se o livro
- * já está registrado no acervo.
+ * Obtém todos os livros cadastrados na biblioteca.
+ *
+ * Realiza uma requisição para a API e retorna a lista
+ * completa de livros. Em caso de erro, retorna um
+ * array vazio.
+ *
+ * @returns Lista de livros cadastrados.
  */
-async function getBookByIsbn(isbn: number): Promise<IBook | null> {
-
-    const response = await fetch(`${api_url}/Books?isbn=${isbn}`);
-
-    if (!response.ok) {
-        throw new Error("Erro ao buscar livro.");
-    }
-
-
-    const books: IBook[] = await response.json();
-
-    return books.length > 0 ? books[0] : null;
-}
 
 export async function getBooks(): Promise<IBook[]> {
     try {

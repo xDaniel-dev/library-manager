@@ -1,5 +1,5 @@
-import "bootstrap"
-import "../../assets/sass/index.scss"
+import "../../utils/common";
+
 import icone from "../../assets/img/icone.webp"
 import books from "../../assets/img/books.png"
 import { login } from "../../services/authService"
