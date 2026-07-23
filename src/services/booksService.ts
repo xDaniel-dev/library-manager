@@ -1,5 +1,5 @@
 import { IBook } from "../interfaces/user";
-import { getByField, POST } from "../utils/generic";
+import { getByField, POST } from "../utils/method";
 import api_url from "./api";
 
 /**

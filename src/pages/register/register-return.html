@@ -59,7 +59,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="home-menu-mobile">
                             <i class="bi bi-house-door"></i>
-                            Home
+                            Início
                         </a>
                     </li>
                     <li class="nav-item">
@@ -94,7 +94,7 @@
 
     <main>
         <section class="register">
-            <form>
+            <form id="form">
 
                 <h3 class="mb-4">Registrar Devolução</h3>
 
@@ -102,73 +102,71 @@
 
                     <!-- Código do empréstimo -->
                     <div class="col-md-4 mb-3">
-                        <label for="codigo" class="form-label">Código do Empréstimo</label>
-                        <input type="number" class="form-control" id="codigo" placeholder="Ex.: 105">
+                        <label for="code" class="form-label">Código do Empréstimo</label>
+                        <input  class="form-control" id="code" placeholder="Ex.: VAAQ63XW">
+                        <div id="codeError" class="invalid-feedback"></div>
+                        <button type="button" class="btn btn-success" id="confirm-code">verificar</button>
                     </div>
 
                     <!-- Cliente -->
                     <div class="col-md-8 mb-3">
-                        <label for="cliente" class="form-label">Cliente</label>
-                        <input type="text" class="form-control" id="cliente" value="João Silva" readonly>
+                        <label for="client" class="form-label">Cliente</label>
+                        <input type="text" class="form-control" id="client" value="Cliente" readonly>
                     </div>
 
                     <!-- Livro -->
                     <div class="col-md-6 mb-3">
-                        <label for="livro" class="form-label">Livro</label>
-                        <input type="text" class="form-control" id="livro" value="Clean Code" readonly>
+                        <label for="book" class="form-label">Livro</label>
+                        <input type="text" class="form-control" id="book" value="Livro" readonly>
                     </div>
 
                     <!-- Funcionário -->
                     <div class="col-md-6 mb-3">
-                        <label for="funcionario" class="form-label">Funcionário Responsável</label>
-                        <input type="text" class="form-control" id="funcionario" value="Funcionário Logado" readonly>
+                        <label for="employee" class="form-label">Funcionário Responsável</label>
+                        <input type="text" class="form-control" id="employee" value="Funcionário Logado" readonly>
                     </div>
 
                     <!-- Empréstimo -->
                     <div class="col-md-4 mb-3">
-                        <label for="dataEmprestimo" class="form-label">Data do Empréstimo</label>
-                        <input type="date" class="form-control" id="dataEmprestimo" readonly>
+                        <label for="loan-date" class="form-label">Data do Empréstimo</label>
+                        <input type="date" class="form-control" id="loan-date" readonly>
                     </div>
 
                     <!-- Prevista -->
                     <div class="col-md-4 mb-3">
-                        <label for="dataPrevista" class="form-label">Data Prevista</label>
-                        <input type="date" class="form-control" id="dataPrevista" readonly>
+                        <label for="return-date" class="form-label">Data Prevista</label>
+                        <input type="date" class="form-control" id="return-date" readonly>
                     </div>
 
                     <!-- Devolução -->
                     <div class="col-md-4 mb-3">
-                        <label for="dataDevolucao" class="form-label">Data da Devolução</label>
-                        <input type="date" class="form-control" id="dataDevolucao">
+                        <label for="date-current" class="form-label">Data da Devolução</label>
+                        <input type="date" class="form-control" id="date-current">
+                        <div id="dateError" class="invalid-feedback"></div>
                     </div>
 
                     <!-- Situação -->
                     <div class="col-md-4 mb-3">
-                        <label for="situacao" class="form-label">Situação</label>
-                        <select class="form-select" id="situacao">
-                            <option selected>Devolvido</option>
-                            <option>Devolvido com atraso</option>
+                        <label for="situation" class="form-label">Situação</label>
+                        <select class="form-select" id="situation">
+                            <option selected>Selecione a situação</option>
+                            <option>Devolvido</option>
                             <option>Livro danificado</option>
                             <option>Livro perdido</option>
                         </select>
+                        <div id="situationError" class="invalid-feedback"></div>
                     </div>
 
                     <!-- Multa -->
                     <div class="col-md-4 mb-3">
-                        <label for="multa" class="form-label">Multa (R$)</label>
-                        <input type="number" class="form-control" id="multa" value="0,00" step="0.01">
-                    </div>
-
-                    <!-- Status -->
-                    <div class="col-md-4 mb-3">
-                        <label for="status" class="form-label">Status</label>
-                        <input type="text" class="form-control" value="Finalizado" readonly>
+                        <label for="fine" class="form-label">Multa (R$)</label>
+                        <input class="form-control" id="fine" value=" R$ 0,00 "  readonly>
                     </div>
 
                     <!-- Observações -->
                     <div class="col-12 mb-3">
-                        <label for="observacao" class="form-label">Observações</label>
-                        <textarea class="form-control" id="observacao" rows="4"
+                        <label for="observations" class="form-label">Observações</label>
+                        <textarea class="form-control" id="observations" rows="4"
                             placeholder="Informe danos, atraso ou qualquer observação sobre a devolução."></textarea>
                     </div>
 

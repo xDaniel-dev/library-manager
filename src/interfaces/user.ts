@@ -9,9 +9,9 @@
 export interface IUser {
     id?: number;
     name: string;
-    cpf: number;
+    cpf: string;
     email: string;
-    telephone: number;
+    telephone: string;
     date: string;
     password: string;
     role: string;
@@ -27,11 +27,11 @@ export interface IUser {
 export interface IBook {
     id?: number;
     name: string;
-    isbn: number;
+    isbn: string;
     author: string;
     publisher: string;
     category: string;
-    year: number;
+    year: string;
     language: string;
     description: string;
 }
@@ -48,12 +48,12 @@ export interface IClient {
     name: string;
     cpf: string;
     email: string;
-    telephone: number;
+    telephone: string;
     date: string;
     address: string;
     cite: string;
     state: string;
-    cep: number;
+    cep: string;
 }
 
 export interface ILoan {
@@ -64,7 +64,20 @@ export interface ILoan {
     employee: string;
     dateLoan: string;
     dateReturn: string;
-    status: string;
     observations: string;
+    code: string;
+}
+
+export interface IReturned {
+    id?: number;
+    name: string;
+    book: string;
+    employee: string;
+    dateLoan: string;
+    dateReturn: string;
+    situation: string;
+    fine: string;
+    observations: string;
+    code: string;
 }
 

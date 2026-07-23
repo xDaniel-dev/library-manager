@@ -19,15 +19,21 @@ window.addEventListener("pageshow", () => {
     }
 });
 
+const email = byId<HTMLInputElement>("email")
+const password = byId<HTMLInputElement>("password")
+const emailError = byId<HTMLInputElement>("emailError")
+const passwordError = byId<HTMLInputElement>("passwordError")
+const loginError = byId<HTMLInputElement>("password")
 
 const form = byId<HTMLFormElement>("loginForm")
 form.addEventListener("submit",async (e)=>{
     e.preventDefault()
-
-    const email = byId<HTMLInputElement>("email")
-    const password = byId<HTMLInputElement>("password")
-
     try {
+
+        if(!validateLogin()){
+            return
+        }
+
         const user = await login(email.value,password.value)
 
         if(!user){
@@ -45,3 +51,41 @@ form.addEventListener("submit",async (e)=>{
     }
     
 })
+
+function validateLogin(): boolean {
+
+    let valid = true;
+
+    email.classList.remove("is-invalid")
+    password.classList.remove("is-invalid")
+
+    emailError.textContent = ""
+    passwordError.textContent = ""
+    loginError.textContent = ""
+
+    if (email.value.trim() === "") {
+        email.classList.add("is-invalid")
+        emailError.textContent = "Informe seu e-mail."
+        valid = false
+    }
+
+    else if (!/\S+@\S+\.\S+/.test(email.value)) {
+        email.classList.add("is-invalid")
+        emailError.textContent = "E-mail inválido."
+        valid = false
+    }
+
+    if (password.value.trim() === "") {
+        password.classList.add("is-invalid")
+        passwordError.textContent = "Informe sua senha."
+        valid = false
+    }
+
+    else if (password.value.length < 6) {
+        password.classList.add("is-invalid")
+        passwordError.textContent = "A senha deve possuir pelo menos 6 caracteres."
+        valid = false
+    }
+
+    return valid
+}

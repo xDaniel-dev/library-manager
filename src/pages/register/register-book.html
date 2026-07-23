@@ -59,7 +59,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="home-menu-mobile">
                             <i class="bi bi-house-door"></i>
-                            Home
+                            Início
                         </a>
                     </li>
                     <li class="nav-item">
@@ -100,27 +100,31 @@
                 <div class="row">
 
                     <div class="col-md-8 mb-3">
-                        <label for="title" class="form-label">Título</label>
+                        <label for="title" class="form-label">Título*</label>
                         <input type="text" class="form-control" id="title" placeholder="Digite o título do livro">
+                        <div id="titleError" class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="isbn" class="form-label">ISBN</label>
+                        <label for="isbn" class="form-label">ISBN*</label>
                         <input type="text" class="form-control" id="isbn" placeholder="000-00-00000-00-0">
+                        <div id="isbnError" class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="author" class="form-label">Autor</label>
+                        <label for="author" class="form-label">Autor*</label>
                         <input type="text" class="form-control" id="author" placeholder="Nome do autor">
+                        <div id="authorError" class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="publisher" class="form-label">Editora</label>
+                        <label for="publisher" class="form-label">Editora*</label>
                         <input type="text" class="form-control" id="publisher" placeholder="Nome da editora">
+                        <div id="publisherError" class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="category" class="form-label">Categoria</label>
+                        <label for="category" class="form-label">Categoria*</label>
                         <select class="form-select" id="category">
                             <option selected>Selecione</option>
                             <option>Romance</option>
@@ -134,15 +138,17 @@
                             <option>Educação</option>
                             <option>Outros</option>
                         </select>
+                        <div id="categoryError" class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="year" class="form-label">Ano de Publicação</label>
+                        <label for="year" class="form-label">Ano de Publicação*</label>
                         <input type="number" class="form-control" id="year" placeholder="2026">
+                        <div id="yearError" class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="language" class="form-label">Idioma</label>
+                        <label for="language" class="form-label">Idioma*</label>
                         <select class="form-select" id="language">
                             <option selected>Selecione</option>
                             <option>Português</option>
@@ -151,11 +157,13 @@
                             <option>Francês</option>
                             <option>Outro</option>
                         </select>
+                        <div id="languageError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-12 mb-3">
-                        <label for="description" class="form-label">Sinopse</label>
+                        <label for="description" class="form-label">Sinopse*</label>
                         <textarea class="form-control" id="description" rows="4"
                             placeholder="Digite uma breve sinopse do livro"></textarea>
+                            <div id="descriptionError" class="invalid-feedback"></div>
                     </div>
                 </div>
 

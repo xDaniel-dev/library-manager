@@ -59,7 +59,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="home-menu-mobile">
                             <i class="bi bi-house-door"></i>
-                            Home
+                            Início
                         </a>
                     </li>
                     <li class="nav-item">
@@ -97,35 +97,42 @@
                 <h3 class="mb-4">Cadastro de Cliente</h3>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="name" class="form-label">Nome completo</label>
+                        <label for="name" class="form-label">Nome completo*</label>
                         <input type="text" class="form-control" id="name" placeholder="Digite o nome">
+                        <div id="nameError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="cpf" class="form-label">CPF</label>
+                        <label for="cpf" class="form-label">CPF*</label>
                         <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
+                        <div id="cpfError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-6 mb-3"> 
-                        <label for="email" class="form-label">E-mail</label> 
+                        <label for="email" class="form-label">E-mail*</label> 
                         <input type="email" class="form-control" id="email" placeholder="email@exemplo.com"> 
+                        <div id="emailError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-6 mb-3"> 
-                        <label for="telephone" class="form-label">Telefone</label> 
+                        <label for="telephone" class="form-label">Telefone*</label> 
                         <input type="tel" class="form-control" id="telephone" placeholder="(00) 00000-0000"> 
+                        <div id="phoneError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-4 mb-3"> 
-                        <label for="date" class="form-label">Data de nascimento</label>
+                        <label for="date" class="form-label">Data de nascimento*</label>
                         <input type="date" class="form-control" id="date">
+                        <div id="dateError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-8 mb-3"> 
-                        <label for="address" class="form-label">Endereço</label> 
+                        <label for="address" class="form-label">Endereço*</label> 
                         <input type="text" class="form-control" id="address" placeholder="Rua, número"> 
-                        </div>
+                        <div id="addressError" class="invalid-feedback"></div>
+                    </div>
                     <div class="col-md-5 mb-3"> 
-                        <label for="cite" class="form-label">Cidade</label>
+                        <label for="cite" class="form-label">Cidade*</label>
                         <input type="text" class="form-control" id="cite">
+                        <div id="citeError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-3 mb-3"> 
-                        <label for="state" class="form-label">Estado</label> 
+                        <label for="state" class="form-label">Estado*</label> 
                         <select class="form-select" id="state">
                             <option selected>Selecione</option>
                             <option>AC</option>
@@ -155,10 +162,13 @@
                             <option>SE</option>
                             <option>SP</option>
                             <option>TO</option>
-                        </select> </div>
+                        </select>
+                        <div id="stateError" class="invalid-feedback"></div>
+                     </div>
                     <div class="col-md-4 mb-3"> 
-                        <label for="cep" class="form-label">CEP</label> 
+                        <label for="cep" class="form-label">CEP*</label> 
                         <input type="text"class="form-control" id="cep" placeholder="00000-000"> 
+                        <div id="cepError" class="invalid-feedback"></div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end gap-2 mt-4"> 

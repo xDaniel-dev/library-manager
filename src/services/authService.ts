@@ -1,5 +1,6 @@
 import api_url from "./api";
 import { IUser } from "../interfaces/user";
+import { hashPassword } from "../utils/pasword";
 
 
 /**
@@ -12,17 +13,26 @@ import { IUser } from "../interfaces/user";
  * Caso contrário, retorna null.
  */
 
-export async function login(
-    email: string,
-    password: string,
+export async function login( email: string, password: string,
 ): Promise<IUser | null> {
     const response = await fetch(
-        `${api_url}/users?email=${email}&password=${password}`
+        `${api_url}/users?email=${email}`
     );
-    const users: IUser[] = await response.json();
-    if (users.length === 0) {
+    
+    const users = await response.json();
+
+    if (!users.length) {
         return null;
     }
-    return users[0];
+
+    const hash = await hashPassword(password);
+
+    const user = users[0];
+
+    if (user.password !== hash) {
+        return null;
+    }
+
+    return user;
 
 }

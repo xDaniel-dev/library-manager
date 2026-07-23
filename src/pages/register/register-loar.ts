@@ -6,9 +6,10 @@ import employeeImg from "../../assets/img/funcionario-icone.png"
 import { checkAuth } from "../../utils/authGuard";
 import { redirect, setElementAttribute, byId } from "../../utils/dom";
 import { getUser, logout } from "../../utils/session";
-import { GET } from "../../utils/generic";
+import { GET } from "../../utils/method";
 import { IBook, IClient, ILoan } from "../../interfaces/user";
 import { recordLoan } from "../../services/recordLoan";
+import { clearError, formatCpf, generateCode, removeInvalidOnInput, setError } from "../../utils/generic";
 
 setElementAttribute("icon-head", "href", icone)
 setElementAttribute("icon-header", "src", icone)
@@ -33,13 +34,12 @@ window.addEventListener("pageshow", () => {
     checkAuth();
 });
 
-const form = byId<HTMLInputElement>("form")
-const selectClient = byId<HTMLInputElement>("client")
+const form = byId<HTMLFormElement>("form")
+const client = byId<HTMLInputElement>("client")
 const cpf = byId<HTMLInputElement>("cpf")
-const selectBook = byId<HTMLInputElement>("book")
+const book = byId<HTMLInputElement>("book")
 const dateLoan = byId<HTMLInputElement>("loan")
 const dateReturn = byId<HTMLInputElement>("return")
-const status = byId<HTMLInputElement>("status")
 const observations = byId<HTMLInputElement>("observations")
 const employee = byId<HTMLInputElement>("employee")
 
@@ -48,33 +48,6 @@ if (employee && user) {
     employee.value = user.name
     employee.defaultValue = user.name;
 }
-
-form.addEventListener("submit", async (e) => {
-    e.preventDefault()
-
-    const bookLoan: ILoan = {
-        name: selectClient.value,
-        cpf: cpf.value,
-        book: selectBook.value,
-        employee: employee.value,
-        dateLoan: dateLoan.value,
-        dateReturn: dateReturn.value,
-        status: status.value,
-        observations: observations.value
-    }
-
-       try {
-            await recordLoan(bookLoan)
-            alert(`Empréstimo registrado !`
-            )
-            
-        } catch (error) {
-            if (error instanceof Error) {
-            alert(error.message);
-        }
-        }
-
-})
 
 function createlist<T extends { name: string }>(data: T[], selectId: string,): void {
 
@@ -100,14 +73,12 @@ async function selectOptions() {
     createlist(clients, "client")
     createlist(books, "book")
 
-    console.log(books)
-
 }
 
 selectOptions()
 
 
-const confirmClient = byId<HTMLInputElement>("confirm-client")
+const confirmClient = byId<HTMLButtonElement>("confirm-client")
 
 confirmClient.addEventListener("click", async () => {
     const select = byId<HTMLInputElement>("client")
@@ -117,9 +88,100 @@ confirmClient.addEventListener("click", async () => {
 
     client.forEach(element => {
         if (element.name === select.value) {
-            cpf.value = element.cpf
+            cpf.value = formatCpf(element.cpf)
         }
     })
 
 })
 
+const clientError = byId<HTMLDivElement>("clientError")
+const bookError = byId<HTMLDivElement>("bookError")
+const loanError = byId<HTMLDivElement>("loanError")
+const returnError = byId<HTMLDivElement>("returnError")
+
+function validateLoan(): boolean {
+
+    let valid = true;
+
+    clearError(client, clientError)
+    clearError(book, bookError)
+    clearError(dateLoan, loanError)
+    clearError(dateReturn, returnError)
+
+    if (client.value === "Selecione um cliente") {
+        setError(client, clientError, "Selecione um cliente.");
+        valid = false
+    }
+
+    if (book.value === "Selecione um livro") {
+        setError(book, bookError, "Selecione um livro.")
+        valid = false
+    }
+
+    if (!dateLoan.value.trim()) {
+        setError(dateLoan, loanError, "Informe a data de empréstimo.")
+        valid = false
+    }
+
+    if (!dateReturn.value.trim()) {
+        setError(dateReturn, returnError, "Informe a data para devolução.")
+        valid = false
+    }
+
+    if (dateLoan.value && dateReturn.value) {
+
+        const loan = new Date(dateLoan.value)
+        const ret = new Date(dateReturn.value)
+
+        if (ret <= loan) {
+            setError(
+                dateReturn,
+                returnError,
+                "A data de devolução deve ser posterior à data do empréstimo."
+            );
+            valid = false
+        }
+    }
+
+    return valid
+}
+
+removeInvalidOnInput([
+    { input: client, error: clientError },
+    { input: book, error: bookError },
+    { input: dateLoan, error: loanError },
+    { input: dateReturn, error: returnError }
+]);
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault()
+
+    if (!validateLoan()) {
+        return;
+    }
+
+    const bookLoan: ILoan = {
+        name: client.value,
+        cpf: cpf.value,
+        book: book.value,
+        employee: employee.value,
+        dateLoan: dateLoan.value,
+        dateReturn: dateReturn.value,
+        observations: observations.value,
+        code: generateCode()
+    }
+
+    try {
+        await recordLoan(bookLoan)
+        alert(`Empréstimo registrado !`
+        )
+
+        form.reset()
+
+    } catch (error) {
+        if (error instanceof Error) {
+            alert(error.message);
+        }
+    }
+
+})

@@ -34,11 +34,14 @@
                 <label for="exampleInputEmail1" class="form-label">Endereço de email</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.</div>
+                <div id="emailError" class="invalid-feedback"></div>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Senha</label>
                 <input type="password" class="form-control" id="password">
+                <div id="passwordError" class="invalid-feedback"></div>
             </div>
+            <div id="loginError" class="text-danger mt-2"></div>
             <button type="submit" class="btn btn-primary">Entrar</button>
         </form>
     </div>

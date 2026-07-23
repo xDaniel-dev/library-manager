@@ -1,5 +1,6 @@
 import { IUser } from "../interfaces/user";
-import { getByField, POST } from "../utils/generic";
+import { getByField, POST } from "../utils/method";
+import api_url from "./api";
 
 
 /**
@@ -18,4 +19,19 @@ export async function createEmployee(employee: IUser) {
     }
 
     return POST("Users",employee,"Erro ao cadastrar funcinário !")
+}
+
+export async function getUsers(): Promise<IUser[]> {
+    try {
+        const response = await fetch(`${api_url}/Users`);
+
+        if (!response.ok) {
+            throw new Error("Erro ao buscar os usuários.");
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
 }

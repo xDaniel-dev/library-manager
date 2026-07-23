@@ -59,7 +59,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="home-menu-mobile">
                             <i class="bi bi-house-door"></i>
-                            Home
+                            Início
                         </a>
                     </li>
                     <li class="nav-item">
@@ -103,13 +103,15 @@
                         <select class="form-select" id="client">
                             <option selected>Selecione um cliente</option>
                         </select>
-                        <button type="button" class="btn btn-success" id="confirm-client">confirmar</button>
+                        <div id="clientError" class="invalid-feedback"></div>
+                        <button type="button" class="btn btn-success" id="confirm-client">verificar</button>
                     </div>
 
                     <!-- CPF -->
                     <div class="col-md-6 mb-3">
                         <label for="cpf" class="form-label">CPF</label>
                         <input type="text" class="form-control" id="cpf" value="000.000.000 - 00" readonly>
+                        <div id="cpfError" class="invalid-feedback"></div>
                     </div>
 
                     <!-- Livro -->
@@ -118,6 +120,7 @@
                         <select class="form-select" id="book">
                             <option selected>Selecione um livro</option>
                         </select>
+                        <div id="bookError" class="invalid-feedback"></div>
                     </div>
 
                     <!-- Funcionário -->
@@ -130,18 +133,14 @@
                     <div class="col-md-3 mb-3">
                         <label for="loan" class="form-label">Data do empréstimo</label>
                         <input type="date" class="form-control" id="loan">
+                        <div id="loanError" class="invalid-feedback"></div>
                     </div>
 
                     <!-- Data prevista -->
                     <div class="col-md-3 mb-3">
                         <label for="return" class="form-label">Data para devolução</label>
                         <input type="date" class="form-control" id="return">
-                    </div>
-
-                    <!-- status -->
-                     <div class="col-md-6 mb-3">
-                        <label for="status" class="form-label">Status</label>
-                        <input type="text" class="form-control" id="status" value="Em andamento" readonly>
+                        <div id="returnError" class="invalid-feedback"></div>
                     </div>
 
                     <!-- Observações -->

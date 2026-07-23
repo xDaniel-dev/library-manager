@@ -4,8 +4,10 @@ import icone from "../../assets/img/icone.webp"
 import client from "../../assets/img/cliente-icone.png"
 import employee from "../../assets/img/funcionario-icone.png"
 import { checkAuth } from "../../utils/authGuard";
-import { redirect,setElementAttribute } from "../../utils/dom";
+import { byId, redirect,setElementAttribute } from "../../utils/dom";
 import { logout } from "../../utils/session";
+import { GET } from "../../utils/method";
+import { IBook, IClient, ILoan, IUser } from "../../interfaces/user";
 
 setElementAttribute("icon-head","href",icone)
 setElementAttribute("icon-header","src",icone)
@@ -38,6 +40,32 @@ redirect("register-loar","/register-loar.html")
 redirect("register-return","/register-return.html")
 
 checkAuth();
+
+const totalBooks = byId<HTMLHeadingElement>("totalBooks")
+const totalClients = byId<HTMLHeadingElement>("totalClients")
+const totalEmployees = byId<HTMLHeadingElement>("totalEmployees")
+const totalBooksLoans = byId<HTMLHeadingElement>("totalBooksLoans")
+
+async function loadDashboard(): Promise<void> {
+    try {
+        const [books, clients, employees, loans] = await Promise.all([
+            GET<IBook[]>("Books", "Erro ao carregar livros"),
+            GET<IClient[]>("Clients", "Erro ao carregar clientes"),
+            GET<IUser[]>("Users", "Erro ao carregar funcionários"),
+            GET<ILoan[]>("Loan", "Erro ao carregar empréstimos")
+        ]);
+
+        totalBooks.textContent = String(books.length);
+        totalClients.textContent = String(clients.length);
+        totalEmployees.textContent = String(employees.length);
+        totalBooksLoans.textContent = String(loans.length);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+loadDashboard();
 
 
 

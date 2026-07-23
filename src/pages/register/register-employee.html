@@ -59,7 +59,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="home-menu-mobile">
                             <i class="bi bi-house-door"></i>
-                            Home
+                            Início
                         </a>
                     </li>
                     <li class="nav-item">
@@ -98,43 +98,51 @@
                 <h3 class="mb-4">Cadastro de Funcionário</h3>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="name" class="form-label">Nome completo</label>
+                        <label for="name" class="form-label">Nome completo*</label>
                         <input type="text" class="form-control" id="name" placeholder="Digite o nome completo">
+                        <div id="nameError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="cpf" class="form-label">CPF</label>
+                        <label for="cpf" class="form-label">CPF*</label>
                         <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
+                        <div id="cpfError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">E-mail</label>
+                        <label for="email" class="form-label">E-mail*</label>
                         <input type="email" class="form-control" id="email" placeholder="email@biblioteca.com">
+                        <div id="emailError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="telephone" class="form-label">Telefone</label>
+                        <label for="telephone" class="form-label">Telefone*</label>
                         <input type="tel" class="form-control" id="telephone" placeholder="(00) 00000-0000">
+                        <div id="phoneError" class="invalid-feedback"></div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="role" class="form-label">Cargo</label>
+                        <label for="role" class="form-label">Cargo*</label>
                         <select class="form-select" id="role">
                             <option selected>Selecione</option>
                             <option>Funcionário</option>
                             <option>Gerente</option>
                         </select>
+                        <div id="roleError" class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="date" class="form-label">Data de admissão</label>
+                        <label for="date" class="form-label">Data de admissão*</label>
                         <input type="date" class="form-control" id="date">
+                        <div id="dateError" class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="password" class="form-label">Senha</label>
+                        <label for="password" class="form-label">Senha*</label>
                         <input type="password" class="form-control" id="password" placeholder="Digite uma senha">
+                        <div id="passwordError" class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="confirmPassword" class="form-label">Confirmar senha</label>
+                        <label for="confirmPassword" class="form-label">Confirmar senha*</label>
                         <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme a senha">
+                        <div id="confirmPasswordError" class="invalid-feedback"></div>
                     </div>
 
                 </div>

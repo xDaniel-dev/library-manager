@@ -136,30 +136,15 @@ http://localhost:3000
 Email:
 
 ```
-admin@email.com
+danieltwz99@gmail.com
 ```
 
 Senha:
 
 ```
-adm
+123456
 ```
 
----
-
-## 👨‍💻 Funcionário
-
-Email:
-
-```
-funcionario@email.com
-```
-
-Senha:
-
-```
-123
-```
 ---
 
 # 📌 Próximas melhorias
