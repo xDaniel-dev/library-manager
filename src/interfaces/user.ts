@@ -26,7 +26,7 @@ export interface IUser {
  */
 export interface IBook {
     id?: number;
-    title: string;
+    name: string;
     isbn: number;
     author: string;
     publisher: string;
@@ -46,7 +46,7 @@ export interface IBook {
 export interface IClient {
     id?: number;
     name: string;
-    cpf: number;
+    cpf: string;
     email: string;
     telephone: number;
     date: string;
@@ -55,3 +55,16 @@ export interface IClient {
     state: string;
     cep: number;
 }
+
+export interface ILoan {
+    id?: number;
+    name: string;
+    cpf: string;
+    book: string;
+    employee: string;
+    dateLoan: string;
+    dateReturn: string;
+    status: string;
+    observations: string;
+}
+

@@ -48,7 +48,7 @@ form.addEventListener("submit",async (e)=>{
     e.preventDefault()
 
     const book:IBook = {
-        title: title.value,
+        name: title.value,
         isbn: Number(isbn.value),
         author: author.value,
         publisher: publisher.value,

@@ -94,64 +94,60 @@
 
     <main>
         <section class="register">
-            <form>
-
+            <form id="form">
                 <h3 class="mb-4">Registrar Empréstimo</h3>
-
                 <div class="row">
-
                     <!-- Cliente -->
                     <div class="col-md-6 mb-3">
-                        <label for="cliente" class="form-label">Cliente</label>
-                        <select class="form-select" id="cliente">
+                        <label for="client" class="form-label">Cliente</label>
+                        <select class="form-select" id="client">
                             <option selected>Selecione um cliente</option>
-                            <option>João Silva</option>
-                            <option>Maria Souza</option>
-                            <option>Carlos Oliveira</option>
                         </select>
+                        <button type="button" class="btn btn-success" id="confirm-client">confirmar</button>
+                    </div>
+
+                    <!-- CPF -->
+                    <div class="col-md-6 mb-3">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" class="form-control" id="cpf" value="000.000.000 - 00" readonly>
                     </div>
 
                     <!-- Livro -->
                     <div class="col-md-6 mb-3">
-                        <label for="livro" class="form-label">Livro</label>
-                        <select class="form-select" id="livro">
+                        <label for="book" class="form-label">Livro</label>
+                        <select class="form-select" id="book">
                             <option selected>Selecione um livro</option>
-                            <option>Clean Code</option>
-                            <option>Dom Casmurro</option>
-                            <option>Harry Potter</option>
                         </select>
                     </div>
 
                     <!-- Funcionário -->
                     <div class="col-md-6 mb-3">
-                        <label for="funcionario" class="form-label">Funcionário Responsável</label>
-                        <input type="text" class="form-control" id="funcionario" value="Funcionário Logado" readonly>
+                        <label for="employee" class="form-label">Funcionário Responsável</label>
+                        <input type="text" class="form-control" id="employee" readonly>
                     </div>
 
                     <!-- Data do empréstimo -->
                     <div class="col-md-3 mb-3">
-                        <label for="emprestimo" class="form-label">Data do empréstimo</label>
-                        <input type="date" class="form-control" id="emprestimo">
+                        <label for="loan" class="form-label">Data do empréstimo</label>
+                        <input type="date" class="form-control" id="loan">
                     </div>
 
                     <!-- Data prevista -->
                     <div class="col-md-3 mb-3">
-                        <label for="devolucao" class="form-label">Data prevista para devolução</label>
-                        <input type="date" class="form-control" id="devolucao">
+                        <label for="return" class="form-label">Data para devolução</label>
+                        <input type="date" class="form-control" id="return">
                     </div>
 
-                    <!-- Status -->
-                    <div class="col-md-3 mb-3">
+                    <!-- status -->
+                     <div class="col-md-6 mb-3">
                         <label for="status" class="form-label">Status</label>
-                        <select class="form-select" id="status">
-                            <option selected>Em andamento</option>
-                        </select>
+                        <input type="text" class="form-control" id="status" value="Em andamento" readonly>
                     </div>
 
                     <!-- Observações -->
                     <div class="col-12 mb-3">
-                        <label for="observacao" class="form-label">Observações</label>
-                        <textarea class="form-control" id="observacao" rows="4"
+                        <label for="observations" class="form-label">Observações</label>
+                        <textarea class="form-control" id="observations" rows="4"
                             placeholder="Observações sobre o empréstimo (opcional)"></textarea>
                     </div>
 

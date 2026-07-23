@@ -48,7 +48,7 @@ function createListBooks(books: IBook[]): void {
 
         li.innerHTML = `
         <div class="book-top">
-                <h4 class="book-title">${book.title}</h4>
+                <h4 class="book-title">${book.name}</h4>
 
                 <span class="category-badge">
                     ${book.category}

@@ -1,7 +1,7 @@
 {
   "Users": [
     {
-      "name": "Carlos Daniel",
+      "name": "Carlos",
       "cpf": 12345678901,
       "email": "danieltwz99@gmail.com",
       "telephone": 85991234567,
@@ -11,7 +11,7 @@
       "id": 2
     },
     {
-      "name": "Carlos Daniel",
+      "name": "Daniel",
       "cpf": 61952384303,
       "email": "danieltwz99@gmail.com",
       "telephone": 85991234567,
@@ -145,7 +145,7 @@
   ],
   "Books": [
     {
-      "title": "Dom Casmurro",
+      "name": "Dom Casmurro",
       "isbn": 9788535914849,
       "author": "Machado de Assis",
       "publisher": "Companhia das Letras",
@@ -156,7 +156,7 @@
       "id": 1
     },
     {
-      "title": "Orgulho e Preconceito",
+      "name": "Orgulho e Preconceito",
       "isbn": 9788544001820,
       "author": "Jane Austen",
       "publisher": "Martin Claret",
@@ -167,7 +167,7 @@
       "id": 2
     },
     {
-      "title": "Harry Potter e a Pedra Filosofal",
+      "name": "Harry Potter e a Pedra Filosofal",
       "isbn": 9788532511010,
       "author": "J. K. Rowling",
       "publisher": "Rocco",
@@ -178,7 +178,7 @@
       "id": 3
     },
     {
-      "title": "O Hobbit",
+      "name": "O Hobbit",
       "isbn": 9788595084759,
       "author": "J. R. R. Tolkien",
       "publisher": "HarperCollins",
@@ -189,7 +189,7 @@
       "id": 4
     },
     {
-      "title": "O Nome do Vento",
+      "name": "O Nome do Vento",
       "isbn": 9788599296493,
       "author": "Patrick Rothfuss",
       "publisher": "Arqueiro",
@@ -200,7 +200,7 @@
       "id": 5
     },
     {
-      "title": "1984",
+      "name": "1984",
       "isbn": 9788535914848,
       "author": "George Orwell",
       "publisher": "Companhia das Letras",
@@ -211,7 +211,7 @@
       "id": 6
     },
     {
-      "title": "Duna",
+      "name": "Duna",
       "isbn": 9788576573133,
       "author": "Frank Herbert",
       "publisher": "Aleph",
@@ -222,7 +222,7 @@
       "id": 7
     },
     {
-      "title": "Fundação",
+      "name": "Fundação",
       "isbn": 9788576572006,
       "author": "Isaac Asimov",
       "publisher": "Aleph",
@@ -233,7 +233,7 @@
       "id": 8
     },
     {
-      "title": "O Código Da Vinci",
+      "name": "O Código Da Vinci",
       "isbn": 9788575421138,
       "author": "Dan Brown",
       "publisher": "Arqueiro",
@@ -244,7 +244,7 @@
       "id": 9
     },
     {
-      "title": "A Garota no Trem",
+      "name": "A Garota no Trem",
       "isbn": 9788501108174,
       "author": "Paula Hawkins",
       "publisher": "Record",
@@ -255,7 +255,7 @@
       "id": 10
     },
     {
-      "title": "O Iluminado",
+      "name": "O Iluminado",
       "isbn": 9788556510365,
       "author": "Stephen King",
       "publisher": "Suma",
@@ -266,7 +266,7 @@
       "id": 11
     },
     {
-      "title": "Drácula",
+      "name": "Drácula",
       "isbn": 9788577990618,
       "author": "Bram Stoker",
       "publisher": "Zahar",
@@ -277,7 +277,7 @@
       "id": 12
     },
     {
-      "title": "A Menina que Roubava Livros",
+      "name": "A Menina que Roubava Livros",
       "isbn": 9788598078175,
       "author": "Markus Zusak",
       "publisher": "Intrínseca",
@@ -288,7 +288,7 @@
       "id": 13
     },
     {
-      "title": "Extraordinário",
+      "name": "Extraordinário",
       "isbn": 9788580573015,
       "author": "R. J. Palacio",
       "publisher": "Intrínseca",
@@ -299,7 +299,7 @@
       "id": 14
     },
     {
-      "title": "Steve Jobs",
+      "name": "Steve Jobs",
       "isbn": 9788535922011,
       "author": "Walter Isaacson",
       "publisher": "Companhia das Letras",
@@ -310,7 +310,7 @@
       "id": 15
     },
     {
-      "title": "Elon Musk",
+      "name": "Elon Musk",
       "isbn": 9786555646535,
       "author": "Walter Isaacson",
       "publisher": "Intrínseca",
@@ -321,7 +321,7 @@
       "id": 16
     },
     {
-      "title": "Clean Code",
+      "name": "Clean Code",
       "isbn": 9780132350884,
       "author": "Robert C. Martin",
       "publisher": "Prentice Hall",
@@ -332,7 +332,7 @@
       "id": 17
     },
     {
-      "title": "JavaScript: O Guia Definitivo",
+      "name": "JavaScript: O Guia Definitivo",
       "isbn": 9788575227303,
       "author": "David Flanagan",
       "publisher": "Bookman",
@@ -343,7 +343,7 @@
       "id": 18
     },
     {
-      "title": "Pedagogia da Autonomia",
+      "name": "Pedagogia da Autonomia",
       "isbn": 9788577531637,
       "author": "Paulo Freire",
       "publisher": "Paz e Terra",
@@ -354,7 +354,7 @@
       "id": 19
     },
     {
-      "title": "O Poder do Hábito",
+      "name": "O Poder do Hábito",
       "isbn": 9788539004119,
       "author": "Charles Duhigg",
       "publisher": "Objetiva",
@@ -365,5 +365,17 @@
       "id": 20
     }
   ],
-  "emprestimos": []
+  "Emprestimos": [
+    {
+      "name": "João Pedro Silva",
+      "cpf": "12345678901",
+      "book": "Extraordinário",
+      "employee": "Daniel",
+      "dateLoan": "2026-07-23",
+      "dateReturn": "2026-07-31",
+      "status": "Em andamento",
+      "observations": "",
+      "id": 1
+    }
+  ]
 }

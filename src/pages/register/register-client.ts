@@ -49,7 +49,7 @@ form.addEventListener("submit",async (e)=>{
 
     const client: IClient = {
         name: name.value,
-        cpf: Number(cpf.value),
+        cpf: cpf.value,
         email: email.value,
         telephone: Number(telephone.value),
         date: date.value,

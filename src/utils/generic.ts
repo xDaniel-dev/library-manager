@@ -68,3 +68,14 @@ export async function getByField<T>(
 
     return data.length > 0 ? data[0] : null;
 }
+
+
+export async function GET<T>(endpoint:string, errorMessage:string):Promise<T>{
+    const response = await fetch(`${api_url}/${endpoint}`)
+
+    if(!response.ok){
+        throw new Error(errorMessage)
+    }
+
+    return await response.json()
+}
