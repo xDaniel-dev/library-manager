@@ -8,6 +8,7 @@ import { byId, redirect,setElementAttribute } from "../../utils/dom";
 import { logout } from "../../utils/session";
 import { ILoan } from "../../interfaces/user";
 import { getLoan } from "../../services/recordLoan";
+import { createSearch } from "../../utils/generic";
 
 setElementAttribute("icon-head","href",icone)
 setElementAttribute("icon-header","src",icone)
@@ -101,3 +102,5 @@ async function loadBooksLoan(): Promise<void> {
 }
 
 loadBooksLoan()
+
+createSearch("search-book","Loans","book",createListBooksLoan)

@@ -10,7 +10,7 @@ export async function recordLoan(bookLoan: ILoan){
 
 export async function getLoan() {
     try {
-        const response = await fetch(`${api_url}/Loan`);
+        const response = await fetch(`${api_url}/Loans`);
 
         if (!response.ok) {
             throw new Error("Erro ao buscar os livros alugados.");

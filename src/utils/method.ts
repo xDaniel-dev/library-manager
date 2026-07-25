@@ -69,24 +69,45 @@ export async function getByField<T>(
     return data.length > 0 ? data[0] : null;
 }
 
+/**
+ * Realiza uma requisição GET para buscar todos os registros de um endpoint.
+ *
+ * template T Tipo dos objetos retornados pela API.
+ * param endpoint Endpoint da API que será consultado.
+ * param errorMessage Mensagem de erro lançada caso a requisição falhe.
+ * returns Uma Promise contendo um vetor de objetos do tipo informado.
+ *
+ * Exemplo:
+ * const books = await GET<IBook>("books", "Erro ao buscar livros.");
+ */
 
-export async function GET<T>(endpoint:string, errorMessage:string):Promise<T>{
+export async function GET<T>(endpoint:string, errorMessage:string):Promise<T[]>{
     const response = await fetch(`${api_url}/${endpoint}`)
 
     if(!response.ok){
         throw new Error(errorMessage)
     }
 
-    return await response.json()
+    return await response.json() as T[]
 }
 
-export async function DELETE(
-    endpoint: string,
-    code: string ,
-    errorMessage: string
+/**
+ * Remove um registro da API utilizando o código informado.
+ *
+ * Primeiro realiza uma consulta para localizar o registro pelo
+ * campo `code`. Em seguida, utiliza o `id` encontrado para enviar
+ * uma requisição HTTP do tipo DELETE e remover o recurso da API.
+ *
+ * param endpoint Endpoint da API onde o registro será removido.
+ * param code Código utilizado para localizar o registro.
+ * param errorMessage Mensagem lançada caso a operação falhe.
+ * returns Não retorna valor.
+ * throws Error Caso a requisição de busca ou exclusão não seja concluída com sucesso,
+ * ou se nenhum registro for encontrado com o código informado.
+ */
+export async function DELETE( endpoint: string, code: string , errorMessage: string
 ): Promise<void> {
 
-    // Busca o registro pelo código
     const response = await fetch(`${api_url}/${endpoint}?code=${code}`);
 
     if (!response.ok) {
@@ -99,7 +120,6 @@ export async function DELETE(
         throw new Error("Registro não encontrado.");
     }
 
-    // Remove utilizando o id encontrado
     const deleteResponse = await fetch(`${api_url}/${endpoint}/${data[0].id}`, {
         method: "DELETE",
     });

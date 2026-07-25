@@ -1,12 +1,13 @@
+@use "../abstracts/_mixins.scss" as *;
+
 .books-page {
     padding: 2rem;
     background: #f5f7fb;
     min-height: 100vh;
 
     .books-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-between;
+
         flex-wrap: wrap;
         gap: 1.5rem;
         margin-bottom: 2rem;
@@ -52,27 +53,24 @@
     }
 
     .book-card {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
+        @include card;
+
         justify-content: space-between;
         height: 100%;
-        background: #fff;
-        border-radius: 16px;
         border: 1px solid #e9ecef;
         padding: 1.75rem;
-        transition: .25s ease;
         position: relative;
 
+        @include hover-up;
+
         &:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
             border-color: #0d6efd;
         }
 
         .book-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flex-between;
+
             gap: 1rem;
             margin-bottom: 1.5rem;
 
@@ -95,8 +93,8 @@
         }
 
         .book-info {
-            display: flex;
-            flex-direction: column;
+            @include flex-column;
+
             gap: .8rem;
 
             p {
@@ -115,7 +113,6 @@
             }
 
             .description {
-                grid-column: 1 / -1;
                 background: #f8f9fa;
                 padding: 1rem;
                 border-radius: 10px;
@@ -126,13 +123,10 @@
         .book-actions {
             display: flex;
             justify-content: flex-end;
-            gap: .75rem;
-            margin-top: 1.75rem;
-            padding-top: 1rem;
-            border-top: 1px solid #f1f3f5;
+            margin-top: 1.5rem;
 
             .btn {
-                min-width: 110px;
+                width: 110px;
                 border-radius: 10px;
                 font-weight: 500;
             }

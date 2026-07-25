@@ -33,7 +33,7 @@ export async function createBook(book: IBook) {
  * completa de livros. Em caso de erro, retorna um
  * array vazio.
  *
- * @returns Lista de livros cadastrados.
+ * returns Lista de livros cadastrados.
  */
 
 export async function getBooks(): Promise<IBook[]> {

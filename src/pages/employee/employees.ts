@@ -7,7 +7,7 @@ import { checkAuth } from "../../utils/authGuard";
 import { byId, redirect,setElementAttribute } from "../../utils/dom";
 import { logout } from "../../utils/session";
 import { IUser } from "../../interfaces/user";
-import { formatCpf, formatPhone } from "../../utils/generic";
+import { createSearch, formatCpf, formatPhone } from "../../utils/generic";
 import { getUsers } from "../../services/employeerService";
 
 setElementAttribute("icon-head","href",icone)
@@ -83,10 +83,12 @@ function createListclient(user: IUser[]): void {
     });
 }
 
-async function loadclientLoan(): Promise<void> {
+async function loadUsers(): Promise<void> {
     const client = await getUsers()
      
     createListclient(client)
 }
 
-loadclientLoan()
+loadUsers()
+
+createSearch("search-employee","Users","name",createListclient)

@@ -49,10 +49,10 @@ const totalBooksLoans = byId<HTMLHeadingElement>("totalBooksLoans")
 async function loadDashboard(): Promise<void> {
     try {
         const [books, clients, employees, loans] = await Promise.all([
-            GET<IBook[]>("Books", "Erro ao carregar livros"),
-            GET<IClient[]>("Clients", "Erro ao carregar clientes"),
-            GET<IUser[]>("Users", "Erro ao carregar funcionários"),
-            GET<ILoan[]>("Loan", "Erro ao carregar empréstimos")
+            GET<IBook>("Books", "Erro ao carregar livros"),
+            GET<IClient>("Clients", "Erro ao carregar clientes"),
+            GET<IUser>("Users", "Erro ao carregar funcionários"),
+            GET<ILoan>("Loans", "Erro ao carregar empréstimos")
         ]);
 
         totalBooks.textContent = String(books.length);

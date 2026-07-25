@@ -1,17 +1,18 @@
+@use "../abstracts/_mixins.scss" as *;
+
 .register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
+
     padding: 2rem;
     background: #f4f6f9;
 
     form {
         width: 100%;
         max-width: 70rem;
-        background: #fff;
+
+        @include card;
+
         padding: 2rem 2.5rem;
-        border-radius: 18px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
 
         h3 {
             font-size: 1.6rem;
@@ -30,7 +31,6 @@
 
         .form-control,
         .form-select {
-
             height: 48px;
             border-radius: 10px;
             border: 1px solid #dee2e6;
@@ -38,7 +38,7 @@
 
             &:focus {
                 border-color: #198754;
-                box-shadow: 0 0 0 .2rem rgba(25, 135, 84, .15);
+                box-shadow: 0 0 0 .2rem rgba(25,135,84,.15);
             }
         }
 
@@ -83,15 +83,11 @@
     }
 }
 
-
-@media (max-width: 768px) {
-
+@media (max-width:768px) {
     .register {
-
         padding: 1rem;
 
         form {
-
             padding: 1.5rem;
 
             h3 {

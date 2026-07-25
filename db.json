@@ -9,6 +9,16 @@
       "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
       "role": "Gerente",
       "id": 1
+    },
+    {
+      "name": "daniel",
+      "cpf": "61952384304",
+      "email": "funcionario@gmail.com",
+      "telephone": "85991234567",
+      "date": "2026-07-24",
+      "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "role": "Funcionário",
+      "id": 2
     }
   ],
   "Clients": [
@@ -355,7 +365,7 @@
       "id": 20
     }
   ],
-  "Loan": [
+  "Loans": [
     {
       "name": "João Pedro Silva",
       "cpf": "12345678901",

@@ -8,7 +8,7 @@ import { byId, redirect,setElementAttribute } from "../../utils/dom";
 import { logout } from "../../utils/session";
 import { IClient } from "../../interfaces/user";
 import { getClient } from "../../services/clientService";
-import { formatCpf, formatPhone } from "../../utils/generic";
+import { createSearch, formatCpf, formatPhone } from "../../utils/generic";
 
 setElementAttribute("icon-head","href",icone)
 setElementAttribute("icon-header","src",icone)
@@ -88,10 +88,12 @@ function createListclient(client: IClient[]): void {
     });
 }
 
-async function loadclientLoan(): Promise<void> {
+async function loadclients(): Promise<void> {
     const client = await getClient()
      
     createListclient(client)
 }
 
-loadclientLoan()
+loadclients()
+
+createSearch("search-client" ,"Clients","name",createListclient)

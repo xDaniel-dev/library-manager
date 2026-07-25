@@ -4,45 +4,46 @@ import icone from "../../assets/img/icone.webp"
 import client from "../../assets/img/cliente-icone.png"
 import employee from "../../assets/img/funcionario-icone.png"
 import { checkAuth } from "../../utils/authGuard";
-import { redirect,setElementAttribute,byId } from "../../utils/dom";
+import { redirect, setElementAttribute, byId } from "../../utils/dom";
 import { logout } from "../../utils/session";
 import { IBook } from "../../interfaces/user"
 import { getBooks } from "../../services/booksService"
+import { createSearch } from "../../utils/generic";
+import { DELETE, GET } from "../../utils/method";
 
-setElementAttribute("icon-head","href",icone)
-setElementAttribute("icon-header","src",icone)
-setElementAttribute("img-book","src",icone)
-setElementAttribute("img-client","src",client)
-setElementAttribute("img-employee","src",employee)
+setElementAttribute("icon-head", "href", icone)
+setElementAttribute("icon-header", "src", icone)
+setElementAttribute("img-book", "src", icone)
+setElementAttribute("img-client", "src", client)
+setElementAttribute("img-employee", "src", employee)
 
-redirect("home-menu","/dashboard.html")
-redirect("books-menu","/books.html")
-redirect("clients-menu","/clients.html")
-redirect("employees-menu","/employees.html")
+redirect("home-menu", "/dashboard.html")
+redirect("books-menu", "/books.html")
+redirect("clients-menu", "/clients.html")
+redirect("employees-menu", "/employees.html")
 
-redirect("home-menu-mobile","/dashboard.html")
-redirect("books-menu-mobile","/books.html")
-redirect("clients-menu-mobile","/clients.html")
-redirect("employees-menu-mobile","/employees.html")
+redirect("home-menu-mobile", "/dashboard.html")
+redirect("books-menu-mobile", "/books.html")
+redirect("clients-menu-mobile", "/clients.html")
+redirect("employees-menu-mobile", "/employees.html")
 
-logout("exit-menu","/login.html")
-logout("exit-menu-mobile","/login.html")
+logout("exit-menu", "/login.html")
+logout("exit-menu-mobile", "/login.html")
 
 window.addEventListener("pageshow", () => {
     checkAuth();
 });
 
+const ul = byId<HTMLUListElement>("ul")
 
 function createListBooks(books: IBook[]): void {
-
-    const ul = byId<HTMLUListElement>("ul")
 
     if (!ul) return
 
     ul.innerHTML = ""
 
     books.forEach(book => {
-        
+
         const li = document.createElement("li")
         li.className = "book-card"
 
@@ -86,14 +87,8 @@ function createListBooks(books: IBook[]): void {
                     ${book.description}
                 </p>
 
-            </div>
-
-            <div class="book-actions">
-                <button class="btn btn-primary edit-book" data-id="${book.id}">
-                    Editar
-                </button>
-
-                <button class="btn btn-danger delete-book" data-id="${book.id}">
+            <div class= "book-actions">
+                <button class="btn btn-danger delete-book admin-only" data-code="${book.isbn}">
                     Excluir
                 </button>
             </div>
@@ -103,9 +98,57 @@ function createListBooks(books: IBook[]): void {
     });
 }
 
+
+createSearch("search-book", "Books", "name", createListBooks)
+
+
+async function deleteBook(code: string): Promise<void> {
+    const confirmDelete = confirm(
+        "Deseja realmente excluir este livro?"
+    )
+    if (!confirmDelete) return;
+    try {
+        await DELETE(
+            "books",
+            code,
+            "Erro ao excluir livro."
+        );
+        const books = await GET<IBook>(
+            "books",
+            "Erro ao buscar livros."
+        );
+        createListBooks(books)
+    } catch (error) {
+
+        console.error(error)
+
+        alert(error instanceof Error
+            ? error.message
+            : "Erro ao excluir livro.")
+    }
+}
+
+ul?.addEventListener("click", (event) => {
+
+    const target = event.target
+
+    if (!(target instanceof HTMLButtonElement)) {
+        return
+    }
+
+    if (!target.classList.contains("delete-book")) {
+        return
+    }
+    const code = target.dataset.code;
+    if (!code) {
+        return
+    }
+    deleteBook(code)
+})
+
 async function loadBooks(): Promise<void> {
     const books = await getBooks()
-     
+
     createListBooks(books)
 }
 

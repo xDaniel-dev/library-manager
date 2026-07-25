@@ -21,6 +21,11 @@ export async function createEmployee(employee: IUser) {
     return POST("Users",employee,"Erro ao cadastrar funcinário !")
 }
 
+/**
+ * Busca todos os usuários cadastrados na API.
+ * Caso a requisição falhe, exibe o erro no console
+ * e retorna um array vazio para evitar que a aplicação seja interrompida.
+ */
 export async function getUsers(): Promise<IUser[]> {
     try {
         const response = await fetch(`${api_url}/Users`);

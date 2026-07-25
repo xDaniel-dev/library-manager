@@ -1,3 +1,12 @@
+/**
+ * Gera um hash SHA-256 para a senha informada.
+ * O hash é utilizado para armazenar e comparar senhas
+ * sem salvar o texto original, aumentando a segurança.
+ *
+ * param password Senha em texto puro.
+ * returns Hash da senha em formato hexadecimal.
+ */
+
 export async function hashPassword(password: string): Promise<string> {
 
     const encoder = new TextEncoder();

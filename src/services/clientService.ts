@@ -23,6 +23,11 @@ export async function createClient(client: IClient) {
 
 }
 
+/**
+ * Busca todos os usuários cadastrados na API.
+ * Caso a requisição falhe, exibe o erro no console
+ * e retorna um array vazio para evitar que a aplicação seja interrompida.
+ */
 export async function getClient(): Promise<IClient[]> {
     try {
         const response = await fetch(`${api_url}/Clients`);

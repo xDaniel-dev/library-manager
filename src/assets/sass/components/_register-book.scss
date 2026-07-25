@@ -1,29 +1,31 @@
+@use "../abstracts/_mixins.scss" as *;
+
 .register {
     min-height: calc(100vh - 80px);
     padding: 2rem;
     background: #f4f6f9;
-
-    display: flex;
-    justify-content: center;
+    @include flex-center;
     align-items: flex-start;
 
+
     form {
+
         width: 100%;
         max-width: 1000px;
-        background: #fff;
-        border-radius: 15px;
+        @include card;
         padding: 2rem 2.5rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
 
         h3 {
-            display: flex;
-            align-items: center;
+
+            @include flex-center;
+            justify-content: flex-start;
             gap: .7rem;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
             border-bottom: 2px solid #198754;
             color: #343a40;
             font-weight: 600;
+
         }
 
         .row {
@@ -31,9 +33,11 @@
         }
 
         .form-label {
+
             font-weight: 600;
             color: #495057;
             margin-bottom: .45rem;
+
         }
 
         .form-control,
@@ -45,18 +49,22 @@
 
             &:focus {
                 border-color: #198754;
-                box-shadow: 0 0 0 .2rem rgba(25, 135, 84, .15);
+                box-shadow: 0 0 0 .2rem rgba(25,135,84,.15);
             }
         }
 
         textarea.form-control {
+
             height: 140px;
             resize: vertical;
+
         }
 
         input[type="file"] {
+
             height: auto;
             padding: .65rem;
+
         }
 
         .btn {
@@ -65,8 +73,9 @@
             border-radius: 8px;
             font-weight: 500;
             transition: .3s ease;
-
+            @include hover-up;
             &:hover {
+
                 transform: translateY(-2px);
             }
         }
@@ -103,21 +112,24 @@
 @media (max-width: 768px) {
     .register {
         padding: 1rem;
-
         form {
             padding: 1.5rem;
-
             h3 {
                 font-size: 1.4rem;
             }
 
             .d-flex {
                 flex-direction: column;
+
+            }
+            .btn {
+
+                width: 100%;
+
             }
 
-            .btn {
-                width: 100%;
-            }
         }
+
     }
+
 }

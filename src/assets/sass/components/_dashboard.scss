@@ -1,6 +1,4 @@
 @use "../abstracts/_mixins.scss" as *;
-@use "../abstracts/_variables.scss" as *;
-
 
 .hidden {
     display: none !important;
@@ -9,8 +7,8 @@
 .dashboard-cards {
     @include flex-start;
     flex-wrap: wrap;
-    gap: $spacing-xl;
-    padding: $spacing-xl;
+    gap: 2rem;
+    padding: 2rem;
 
     .card {
         @include card;
@@ -21,8 +19,8 @@
 
         .card-header {
             @include flex-between;
-            background: $white;
-            padding: $spacing-lg;
+            background: #fff;
+            padding: 1.8rem;
             border: none;
             box-shadow: none;
 
@@ -31,43 +29,43 @@
                 width: 65px;
                 height: 65px;
                 object-fit: contain;
-                background: $card-icon-bg;
-                padding: $spacing-sm;
-                border-radius: $radius-lg;
+                background: #eef8f2;
+                padding: 1rem;
+                border-radius: 18px;
                 font-size: 30px;
             }
 
             h5 {
-                font-size: $spacing-xl;
+                font-size: 2rem;
                 font-weight: 700;
-                color: $primary;
+                color: #198754;
                 margin: 0;
             }
 
             p {
                 margin: .3rem 0 0;
-                color: $text-light;
+                color: #6c757d;
                 font-size: .95rem;
             }
         }
 
         .card-footer {
             @include flex-between;
-            background: $white;
-            border-top: 1px solid $border-color;
-            padding: $spacing-sm $spacing-lg;
+            background: #fff;
+            border-top: 1px solid #ececec;
+            padding: 1rem 1.8rem;
 
             a {
                 text-decoration: none;
-                color: $primary;
+                color: #198754;
                 font-weight: 600;
                 cursor: pointer;
             }
 
             i {
-                font-size: $spacing-md;
-                color: $primary;
-                transition: $transition;
+                font-size: 1.4rem;
+                color: #198754;
+                transition: .3s ease;
             }
         }
 
@@ -78,8 +76,8 @@
 
     .list-group {
         width: 25rem;
-        border-bottom: 1px solid $border-light;
-        box-shadow: $shadow-sm;
+        border-bottom: 1px solid #f1f1f1;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, .2);
 
         .title {
             font-size: 20px;
@@ -88,7 +86,7 @@
         .card-li {
             display: flex;
             justify-content: space-between;
-            font-size: $radius-lg;
+            font-size: 18px;
 
             a {
                 text-decoration: none;
@@ -104,225 +102,173 @@
 
 .dashboard-table {
     display: flex;
-    gap: $spacing-xl;
+    gap: 2rem;
     align-items: flex-start;
-    padding: $spacing-xl;
+    padding: 2rem;
 
     .table-container {
         flex: 3;
         width: 75%;
 
         .table {
-
-            background: $white;
-            border-radius: $radius-lg;
+            background: #fff;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: $shadow-lg;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
             margin: 0;
 
             caption {
-
                 caption-side: top;
                 text-align: left;
                 font-size: 1.3rem;
                 font-weight: 700;
-                color: $text-dark;
-                padding: $spacing-md;
-                background: $white;
-
+                color: #343a40;
+                padding: 1.4rem;
+                background: #fff;
             }
 
             thead {
-
-                background: $primary;
-                color: $white;
+                background: #198754;
+                color: #fff;
 
                 th {
-
                     border: none;
-                    padding: $spacing-sm;
+                    padding: 1rem;
                     font-weight: 600;
                     white-space: nowrap;
-
                 }
-
             }
 
             tbody {
 
                 tr {
-
-                    transition: $transition;
+                    transition: .3s ease;
 
                     &:hover {
-
-                        background: $background-hover;
-
+                        background: #f8f9fa;
                     }
-
                 }
 
                 td,
                 th {
-
                     vertical-align: middle;
-                    padding: $spacing-sm;
-
+                    padding: 1rem;
                 }
 
                 .book {
-
-
                     display: flex;
                     align-items: center;
-                    gap: $spacing-sm;
+                    gap: 1rem;
 
                     .bi {
-
-                        @include icon-circle(48px,
-                            linear-gradient(135deg, $purple, $purple-light));
+                        @include icon-circle(
+                            48px,
+                            linear-gradient(135deg, #6f42c1, #9b6dff)
+                        );
 
                         font-size: 1.4rem;
-
                     }
 
                     div {
-
                         display: flex;
                         flex-direction: column;
-
                     }
 
                     p {
-
                         margin: 0;
-
                     }
 
                     p:first-child {
-
                         font-weight: 600;
-                        color: $text;
-
+                        color: #212529;
                     }
 
                     p:last-child {
-
-                        color: $text-light;
+                        color: #6c757d;
                         font-size: .9rem;
-
                     }
-
                 }
-
             }
-
         }
-
     }
 
     .list-book {
-
         flex: 1;
         width: 25%;
         margin: 0 2rem;
 
         .list-group {
-
             border: none;
-            border-radius: $radius-lg;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: $shadow-lg;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
 
             .title {
-
-                background: $primary;
-                color: $white;
+                background: #198754;
+                color: #fff;
                 font-size: 1.2rem;
                 font-weight: 500;
-                padding: $spacing-sm $spacing-md;
+                padding: 1rem 1.4rem;
                 transition: none;
                 transform: none;
 
                 &:hover {
-
-                    background: $primary;
+                    background: #198754;
                     transform: none;
-
                 }
-
             }
 
             .list-group-item {
-
-                padding: $spacing-sm $spacing-md;
+                padding: 1rem 1.4rem;
                 border: none;
-                border-bottom: 1px solid $border-light;
-                transition: $transition;
+                border-bottom: 1px solid #f1f1f1;
+                transition: .3s ease;
 
                 &:not(.title):hover {
-
-                    background: $background-hover;
+                    background: #f8f9fa;
                     transform: translateX(5px);
-
                 }
 
                 &:last-child {
-
                     border: none;
-
                 }
 
                 .card-book {
-
                     display: flex;
                     align-items: center;
-                    gap: $spacing-sm;
+                    gap: 1rem;
 
                     .bi {
-
                         @include flex-center;
-
                         width: 48px;
                         height: 48px;
-                        border-radius: $radius-circle;
+                        border-radius: 50%;
                         font-size: 1.3rem;
-                        color: $white;
-                        background: linear-gradient(135deg,
-                                $purple,
-                                $purple-light );
-
+                        color: #fff;
+                        background: linear-gradient(
+                            135deg,
+                            #6f42c1,
+                            #9b6dff
+                        );
                     }
 
                     div {
-
                         p {
-
                             margin: 0;
 
                             &:first-child {
-
                                 font-weight: 600;
-                                color: $text;
-
+                                color: #212529;
                             }
 
                             &:last-child {
-
-                                color: $text-light;
+                                color: #6c757d;
                                 font-size: .9rem;
-
                             }
-
                         }
-
                     }
-
                 }
-
             }
-
         }
-
     }
 }
