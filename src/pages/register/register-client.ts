@@ -164,15 +164,15 @@ form.addEventListener("submit", async (e) => {
     }
 
     const client: IClient = {
-        name: name.value,
-        cpf: cpf.value,
+        name: name.value.trim(),
+        cpf: cpf.value.replace(/\D/g, ""),
         email: email.value,
-        telephone: telephone.value,
+        telephone: telephone.value.replace(/\D/g, ""),
         date: date.value,
         address: address.value,
         cite: cite.value,
         state: state.value,
-        cep: cep.value
+        cep: cep.value.replace(/\D/g, "")
     }
 
     try {
