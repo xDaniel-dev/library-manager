@@ -7,5 +7,5 @@
  * Em um ambiente de produção, esse valor pode ser alterado
  * para a URL real da API.
  */
-const api_url = "http://localhost:3001";
+const api_url = "https://library-manager-0eee.onrender.com";
 export default api_url;
