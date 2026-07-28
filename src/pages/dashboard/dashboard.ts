@@ -8,6 +8,7 @@ import { byId, redirect,setElementAttribute } from "../../utils/dom";
 import { logout } from "../../utils/session";
 import { GET } from "../../utils/method";
 import { IBook, IClient, ILoan, IUser } from "../../interfaces/user";
+import { createCategoryChart } from "../../services/categoryChart";
 
 setElementAttribute("icon-head","href",icone)
 setElementAttribute("icon-header","src",icone)
@@ -59,6 +60,8 @@ async function loadDashboard(): Promise<void> {
         totalClients.textContent = String(clients.length);
         totalEmployees.textContent = String(employees.length);
         totalBooksLoans.textContent = String(loans.length);
+
+        createCategoryChart(books)
 
     } catch (error) {
         console.error(error);

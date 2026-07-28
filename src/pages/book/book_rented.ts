@@ -8,7 +8,7 @@ import { byId, redirect,setElementAttribute } from "../../utils/dom";
 import { logout } from "../../utils/session";
 import { ILoan } from "../../interfaces/user";
 import { getLoan } from "../../services/recordLoan";
-import { createSearch } from "../../utils/generic";
+import { createSearch, formatCpf } from "../../utils/generic";
 
 setElementAttribute("icon-head","href",icone)
 setElementAttribute("icon-header","src",icone)
@@ -51,7 +51,7 @@ function createListBooksLoan(books: ILoan[]): void {
                 <h4 class="book-title">${book.book}</h4>
 
                 <span class="category-badge">
-                    ${book.code}
+                    Código: ${book.code}
                 </span>
             </div>
 
@@ -64,7 +64,7 @@ function createListBooksLoan(books: ILoan[]): void {
 
                 <p>
                     <strong>CPF:</strong>
-                    ${book.cpf}
+                    ${formatCpf(book.cpf)}
                 </p>
 
                 <p>

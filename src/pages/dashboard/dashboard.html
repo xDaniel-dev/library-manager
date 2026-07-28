@@ -201,136 +201,23 @@
                 </li>
             </ul>
         </section>
-        <section class="dashboard-table">
-            <div class="table-container ">
-                <table class="table table-hover">
-                    <caption class="fs-4 fw-bold text-dark">Últimos Empréstimos</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Livro</th>
-                            <th scope="col">Cliente</th>
-                            <th scope="col">Data emprestimo</th>
-                            <th scope="col">Data devolução</th>
-                            <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>
-                                <div class="book">
-                                    <i class="bi bi-journals"></i>
-                                    <div>
-                                        <p>Titulo do livro</p>
-                                        <p>Autor</p>
-                                    </div>
-                            </td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>
-                                <div class="book">
-                                    <i class="bi bi-journals"></i>
-                                    <div>
-                                        <p>Titulo do livro</p>
-                                        <p>Autor</p>
-                                    </div>
-                            </td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>
-                                <div class="book">
-                                    <i class="bi bi-journals"></i>
-                                    <div>
-                                        <p>Titulo do livro</p>
-                                        <p>Autor</p>
-                                    </div>
-                            </td>
-                            <td>Doe</td>
-                            <td>@social</td>
-                            <td>@social</td>
-                            <td>@social</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>
-                                <div class="book">
-                                    <i class="bi bi-journals"></i>
-                                    <div>
-                                        <p>Titulo do livro</p>
-                                        <p>Autor</p>
-                                    </div>
-                            </td>
-                            <td>Doe</td>
-                            <td>@social</td>
-                            <td>@social</td>
-                            <td>@social</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>
-                                <div class="book">
-                                    <i class="bi bi-journals"></i>
-                                    <div>
-                                        <p>Titulo do livro</p>
-                                        <p>Autor</p>
-                                    </div>
-                            </td>
-                            <td>Doe</td>
-                            <td>@social</td>
-                            <td>@social</td>
-                            <td>@social</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="list-book">
-                <ul class="list-group ">
-                    <li class="list-group-item title">Livros mais alugados</li>
-                    <li class="list-group-item">
-                        <div class="card-book">
-                            <i class="bi bi-journals"></i>
-                            <div>
-                                <p class="card-link">Titulo do livro</p>
-                                <p class="card-link">Autor</p>
+        <section>
+            <div class="dashboard-charts">
+                <div class="category-chart">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="mb-4">
+                                Livros por Categoria
+                            </h5>
+                            <div class="chart-container">
+                                <canvas id="categoryChart"></canvas>
                             </div>
                         </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="card-book">
-                            <i class="bi bi-journals"></i>
-                            <div>
-                                <p class="card-link">Titulo do livro</p>
-                                <p class="card-link">Autor</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="card-book">
-                            <i class="bi bi-journals"></i>
-                            <div>
-                                <p class="card-link">Titulo do livro</p>
-                                <p class="card-link">Autor</p>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-
-
 </body>
 
 </html>

@@ -1,24 +1,34 @@
 {
   "Users": [
     {
-      "name": "Carlos Daniel",
-      "cpf": "61952384303",
-      "email": "danieltwz99@gmail.com",
-      "telephone": "85985648728",
-      "date": "2026-07-23",
-      "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
-      "role": "Gerente",
-      "id": 1
-    },
-    {
-      "name": "daniel",
-      "cpf": "61952384304",
-      "email": "funcionario@gmail.com",
+      "name": "João Pedro Almeida",
+      "cpf": "52998224725",
+      "email": "joao.almeida@biblioteca.com",
       "telephone": "85991234567",
-      "date": "2026-07-24",
+      "date": "2026-07-27",
       "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
       "role": "Funcionário",
       "id": 2
+    },
+    {
+      "name": "Mariana Costa Silva",
+      "cpf": "16899535009",
+      "email": "mariana.silva@biblioteca.com",
+      "telephone": "85992345678",
+      "date": "2026-07-22",
+      "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "role": "Funcionário",
+      "id": 3
+    },
+    {
+      "name": "Carlos Daniel",
+      "cpf": "71460238001",
+      "email": "danieltwz99@gmail.com",
+      "telephone": "85993456789",
+      "date": "2026-07-09",
+      "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "role": "Gerente",
+      "id": 4
     }
   ],
   "Clients": [

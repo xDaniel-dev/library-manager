@@ -144,7 +144,19 @@ Senha:
 ```
 123456
 ```
+## 👨‍💼 Funcionário
 
+Email:
+
+```
+mariana.silva@biblioteca.com
+```
+
+Senha:
+
+```
+123456
+```
 ---
 
 # 📌 Próximas melhorias
