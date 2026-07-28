@@ -160,7 +160,7 @@ form.addEventListener("submit", async (e) => {
         alert(`Devolução registrada !`
         )
 
-        await DELETE("Loan", code.value, "Erro ao excluir o livro !")
+        await DELETE("Loans", code.value, "Erro ao excluir o livro !")
 
         form.reset()
 
