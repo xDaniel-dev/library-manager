@@ -42,7 +42,7 @@ confirmCode.addEventListener("click", async () => {
 
     currentLoan = null;
 
-    const loans: ILoan[] = await GET("Loan", "Erro ao buscar empréstimos");
+    const loans: ILoan[] = await GET("Loans", "Erro ao buscar empréstimos");
 
     currentLoan = loans.find(loan => loan.code === code.value) ?? null;
 

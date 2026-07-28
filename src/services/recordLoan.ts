@@ -4,7 +4,7 @@ import api_url from "./api";
 
 export async function recordLoan(bookLoan: ILoan){
 
-    return POST("Loan",bookLoan,"Erro ao registrar empréstimo !")
+    return POST("Loans",bookLoan,"Erro ao registrar empréstimo !")
 
 }
 
