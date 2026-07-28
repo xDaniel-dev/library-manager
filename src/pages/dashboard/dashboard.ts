@@ -26,8 +26,8 @@ redirect("books-menu-mobile","/books.html")
 redirect("clients-menu-mobile","/clients.html")
 redirect("employees-menu-mobile","/employees.html")
 
-logout("exit-menu","/login.html")
-logout("exit-menu-mobile","/login.html")
+logout("exit-menu","/index.html")
+logout("exit-menu-mobile","/index.html")
 
 redirect("books","/books.html")
 redirect("clients","/clients.html")

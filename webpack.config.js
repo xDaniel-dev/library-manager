@@ -5,7 +5,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/pages/login/login.html",
-      filename: "login.html",
+      filename: "index.html",
       chunks: ["login"],
     }),
     new HtmlWebpackPlugin({
@@ -66,11 +66,11 @@ module.exports = {
     books: "./src/pages/book/books.ts",
     book_rented: "./src/pages/book/book_rented.ts",
     clients: "./src/pages/client/clients.ts",
-    register_book:"./src/pages/register/register-book.ts",
-    register_client:"./src/pages/register/register-client.ts",
-    register_employee:"./src/pages/register/register-employee.ts",
-    register_loar:"./src/pages/register/register-loar.ts",
-    register_return:"./src/pages/register/register-return.ts",
+    register_book: "./src/pages/register/register-book.ts",
+    register_client: "./src/pages/register/register-client.ts",
+    register_employee: "./src/pages/register/register-employee.ts",
+    register_loar: "./src/pages/register/register-loar.ts",
+    register_return: "./src/pages/register/register-return.ts",
 
   },
 
@@ -134,6 +134,11 @@ module.exports = {
     open: true,
     port: 3000,
   },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
 
-  mode: "development",
+  mode: "production",
 };
